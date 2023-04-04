@@ -1,6 +1,4 @@
-﻿using GBUZhilishnikKuncevo.Classes;
-using GBUZhilishnikKuncevo.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GBUZhilishnikKuncevo
+namespace GBUZhilishnikKuncevo.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для WelcomePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WelcomePage : Page
     {
-        public MainWindow()
+        public WelcomePage()
         {
             InitializeComponent();
-            Navigation.frameNav = MainFrame;
-            MainFrame.Navigate(new WelcomePage());
         }
     }
 }

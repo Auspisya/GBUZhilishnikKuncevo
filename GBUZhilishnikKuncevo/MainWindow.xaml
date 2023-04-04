@@ -27,7 +27,10 @@
                 <Image Source="./Icons/gerb_kuncevo_moskva.jpg"
                    Height="50"
                    Width="50"/>
-                <!--<TextBlock Text="{Binding ElementName=FrameMain, Path=Content.Title}"/>-->
+                <TextBlock Text="{Binding ElementName=MainFrame, Path=Content.Title}"
+                           Style="{StaticResource MaterialDesignBody1TextBlock}"
+                           VerticalAlignment="Center"
+                           FontSize="30"/>
             </StackPanel>
         </Border>
         
@@ -43,6 +46,22 @@
                                   Color="LightGray"
                                   ShadowDepth="0"/>
             </Border.Effect>
+        </Border>
+
+        <Border Grid.Row="1"
+                Margin="5"
+                HorizontalAlignment="Right"
+                Width="900"
+                Height="480"
+                Background="White"
+                CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20"
+                                  Color="LightGray"
+                                  ShadowDepth="0"/>
+            </Border.Effect>
+            <Frame x:Name="MainFrame"
+               NavigationUIVisibility="Hidden"/>
         </Border>
     </Grid>
 </Window>
