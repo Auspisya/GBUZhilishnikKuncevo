@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:GBUZhilishnikKuncevo"
         mc:Ignorable="d"
         Title="ГБУ Жилищник Района Кунцево" MinHeight="600" MinWidth="1200"
+        MaxHeight="600" MaxWidth="1200"
         Icon="./Icons/gerb_kuncevo_moskva.jpg"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#EFEFEF">
@@ -30,7 +31,8 @@
                 <TextBlock Text="{Binding ElementName=MainFrame, Path=Content.Title}"
                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                            VerticalAlignment="Center"
-                           FontSize="30"/>
+                           FontSize="30"
+                           Foreground="#045E30"/>
             </StackPanel>
         </Border>
         
@@ -46,6 +48,38 @@
                                   Color="LightGray"
                                   ShadowDepth="0"/>
             </Border.Effect>
+            <StackPanel Margin="6">
+                <TextBlock Text="Меню"
+                           TextAlignment="Center"
+                           FontSize="30"
+                           Foreground="#045E30"
+                           Margin="0, 10, 0, 10"/>
+                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                        Content="Квартиросъёмщики"
+                        Foreground="#0850A4"
+                        FontSize="20"
+                        Margin="0, 0, 0, 5"/>
+                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                        Content="Счётчики"
+                        Foreground="#0850A4"
+                        FontSize="20"
+                        Margin="0, 0, 0, 5"/>
+                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                        Content="Показания счётчиков"
+                        Foreground="#0850A4"
+                        FontSize="20"
+                        Margin="0, 0, 0, 5"/>
+                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                        Content="Квитанции"
+                        Foreground="#0850A4"
+                        FontSize="20"
+                        Margin="0, 0, 0, 5"/>
+                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                        Content="Задолженности"
+                        Foreground="#0850A4"
+                        FontSize="20"
+                        Margin="0, 0, 0, 5" Cursor="Hand"/>
+            </StackPanel>
         </Border>
 
         <Border Grid.Row="1"
@@ -61,7 +95,8 @@
                                   ShadowDepth="0"/>
             </Border.Effect>
             <Frame x:Name="MainFrame"
-               NavigationUIVisibility="Hidden"/>
+                   Margin="6"
+                   NavigationUIVisibility="Hidden"/>
         </Border>
     </Grid>
 </Window>

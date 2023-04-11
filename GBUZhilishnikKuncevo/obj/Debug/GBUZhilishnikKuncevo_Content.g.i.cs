@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/gerb_kuncevo_moskva.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/model1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/model1.tt")]
 
 

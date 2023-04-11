@@ -8,7 +8,26 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ГБУ Жилищник района Кунцево">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Image Source="./Resources/gerb_kuncevo_moskva.jpg"
+               Height="300"
+               Width="300"
+               HorizontalAlignment="Right"
+               Margin="0, 0, 50, 0"/>
+        <TextBlock Text="Добро пожаловать!"
+                   VerticalAlignment="Center"
+                   FontSize="40"
+                   Margin="55, 0, 0, 120"
+                   Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                   Foreground="#063B79"/>
+        <TextBlock Text="Воспользуйтесь меню для страничного перехода"
+                   TextWrapping="WrapWithOverflow"
+                   Width="400"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   FontSize="35"
+                   Margin="55, 100, 0, 50"
+                   Style="{StaticResource MaterialDesignHeadline1TextBlock}"
+                   Foreground="#045E30"/>
     </Grid>
 </Page>
