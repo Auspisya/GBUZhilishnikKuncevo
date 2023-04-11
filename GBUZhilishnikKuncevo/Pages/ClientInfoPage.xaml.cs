@@ -27,6 +27,11 @@ namespace GBUZhilishnikKuncevo.Pages
             InitializeComponent();
             TxbFullName.Text = client.surname.ToString() + " " + client.name.ToString() + " " + client.patronymic.ToString();
             TxbNumPassport.Text = client.Passport.passportNumber.ToString();
+            TxbDateOfBirth.Text = client.dateOfBirth.ToShortDateString();
+            TxbGender.Text = client.Gender.genderName.ToString();
+            TxbPassportSeries.Text = client.Passport.passportSeries.ToString();
+            TxbSNILS.Text = client.SNILS.snilsNumber.ToString();
+            TxbTIN.Text = client.TIN.tinNumber.ToString();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

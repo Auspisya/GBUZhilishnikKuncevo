@@ -61,7 +61,9 @@
                         Foreground="#0850A4"
                         FontSize="20"
                         Margin="0, 0, 0, 5"/>
-                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                <Button Name="BtnCounterPage"
+                        Click="BtnCounterPage_Click"
+                        Style="{StaticResource MaterialDesignFlatButton}"
                         Content="Счётчики"
                         Foreground="#0850A4"
                         FontSize="20"

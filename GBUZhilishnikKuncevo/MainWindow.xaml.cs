@@ -33,5 +33,10 @@ namespace GBUZhilishnikKuncevo
         {
             Navigation.frameNav.Navigate(new ClientPage());
         }
+
+        private void BtnCounterPage_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new CounterPage());
+        }
     }
 }

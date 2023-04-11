@@ -1,4 +1,4 @@
-﻿<Page x:Class="GBUZhilishnikKuncevo.Pages.ClientPage"
+﻿<Page x:Class="GBUZhilishnikKuncevo.Pages.CounterPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,27 +6,21 @@
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Квартиросъёмщики">
+      Title="Счётчики">
 
     <Grid Background="White">
-        <DataGrid Name ="DataClient"
+        <DataGrid Name ="DataCounter"
                       AutoGenerateColumns="False"
                       IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Идентификатор"
                                         Binding="{Binding id}"
                                         Width="*"/>
-                <DataGridTextColumn Header="Фамилия"
-                                        Binding="{Binding surname}"
+                <DataGridTextColumn Header="Номер счётчика"
+                                        Binding="{Binding counterNumber}"
                                         Width="*"/>
-                <DataGridTextColumn Header="Имя"
-                                        Binding="{Binding name}"
-                                        Width="*"/>
-                <DataGridTextColumn Header="Отчество"
-                                        Binding="{Binding patronymic}"
-                                        Width="*"/>
-                <DataGridTextColumn Header="Номер телефона"
-                                        Binding="{Binding phoneNumber}"
+                <DataGridTextColumn Header="Тип"
+                                        Binding="{Binding TypeOfCounter.counterName}"
                                         Width="*"/>
                 <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.CellTemplate>
@@ -34,7 +28,7 @@
                             <StackPanel>
                                 <Button Name="BtnShowInfo"
                                     Click="BtnShowInfo_Click"
-                                    Content="Подробнее"
+                                    Content="Адрес"
                                     Foreground="#0850A4"
                                     Style="{StaticResource MaterialDesignFlatButton}"/>
                             </StackPanel>
