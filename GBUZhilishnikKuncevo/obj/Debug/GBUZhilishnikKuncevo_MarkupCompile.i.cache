@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\App.xaml
-21866657528
+41785168140
 2-1223955081
-33107458960
+361148564012
 21345587702
-MainWindow.xaml;Pages\WelcomePage.xaml;
+MainWindow.xaml;Pages\ClientInfoPage.xaml;Pages\ClientPage.xaml;Pages\WelcomePage.xaml;
 
-False
+True
 

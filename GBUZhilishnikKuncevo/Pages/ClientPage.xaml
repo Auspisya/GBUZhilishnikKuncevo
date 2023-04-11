@@ -1,0 +1,47 @@
+﻿<Page x:Class="GBUZhilishnikKuncevo.Pages.ClientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Квартиросъёмщики">
+
+    <Grid Background="White">
+        <DataGrid Name ="DataClient"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Идентификатор"
+                                        Binding="{Binding id}"
+                                        Width="*"/>
+                <DataGridTextColumn Header="Фамилия"
+                                        Binding="{Binding surname}"
+                                        Width="*"/>
+                <DataGridTextColumn Header="Имя"
+                                        Binding="{Binding name}"
+                                        Width="*"/>
+                <DataGridTextColumn Header="Отчество"
+                                        Binding="{Binding patronymic}"
+                                        Width="*"/>
+                <DataGridTextColumn Header="Номер телефона"
+                                        Binding="{Binding phoneNumber}"
+                                        Width="*"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button Name="BtnShowInfo"
+                                    Click="BtnShowInfo_Click"
+                                    Content="Показать"
+                                    Foreground="#0850A4"
+                                    Style="{StaticResource MaterialDesignFlatButton}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

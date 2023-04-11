@@ -28,5 +28,10 @@ namespace GBUZhilishnikKuncevo
             Navigation.frameNav = MainFrame;
             MainFrame.Navigate(new WelcomePage());
         }
+
+        private void BtnClientPage_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new ClientPage());
+        }
     }
 }
