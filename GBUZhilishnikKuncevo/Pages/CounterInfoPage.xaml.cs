@@ -25,6 +25,7 @@ namespace GBUZhilishnikKuncevo.Pages
         public CounterInfoPage(Counter counter)
         {
             InitializeComponent();
+            //Наполняем текстовые блоки информацией из БД
             TxbCounterNumber.Text = "Номер счётчика: " + "[" + counter.counterNumber + "]";
             TxbApartmentNumber.Text = counter.Apartment.Address.apartmentNumber.ToString();
             TxbArea.Text = counter.Apartment.Address.area.ToString();

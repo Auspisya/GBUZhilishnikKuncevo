@@ -25,12 +25,14 @@ namespace GBUZhilishnikKuncevo.Pages
         public CounterPage()
         {
             InitializeComponent();
+            //Обнуляем таблицу, затем добавляем в нее данные
             DataCounter.ItemsSource = null;
             DataCounter.ItemsSource = DBConnection.DBConnect.Counter.ToList();
         }
 
         private void BtnShowInfo_Click(object sender, RoutedEventArgs e)
         {
+            //В зависимости от выбранной строки, передаём её данные на следующую страницу и используем там
             Navigation.frameNav.Navigate(new CounterInfoPage((sender as Button).DataContext as Counter));
         }
     }

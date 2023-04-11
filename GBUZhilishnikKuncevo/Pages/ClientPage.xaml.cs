@@ -2,6 +2,7 @@
 using GBUZhilishnikKuncevo.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,45 @@ namespace GBUZhilishnikKuncevo.Pages
 
         private void BtnShowInfo_Click(object sender, RoutedEventArgs e)
         {
+            //В зависимости от выбранной строки, передаём её данные на следующую страницу и используем там
             Navigation.frameNav.Navigate(new ClientInfoPage((sender as Button).DataContext as Client));
         }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                if (TxbSearch.Text != "")
+                {
+                    string searchString = TxbSearch.Text.ToLower();
+
+                    var itemsList = DBConnection.DBConnect.Client.ToList();
+
+                    //Ищем совпадения в таблице по фамилии
+                    var searchResults = itemsList.Where(item => item.surname.ToLower().Contains(searchString)).ToList();
+
+                    //Заполняем таблицу записями, где есть совпадения
+                    DataClient.ItemsSource = searchResults.ToList();
+                }
+                else {
+                    MessageBox.Show("Вы ничего не ввели", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Непредвиденная ошибка", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
+
+        private void TxbSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            //Убираем подпись
+            TxbSearch.Text = "";
+        }
+
     }
 }

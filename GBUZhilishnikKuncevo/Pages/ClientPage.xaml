@@ -9,9 +9,27 @@
       Title="Квартиросъёмщики">
 
     <Grid Background="White">
+        <TextBox Name="TxbSearch"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 Text="Введите фамилию для поиска..."
+                 Style="{StaticResource MaterialDesignTextBox}"
+                 Width="250"
+                 GotFocus="TxbSearch_GotFocus"
+                 CaretBrush="#FF0850A4"
+                 SelectionBrush="#FF0850A4"/>
+        <Button Name="BtnSearch"
+                Click="BtnSearch_Click"
+                Content="Искать"
+                Foreground="#0850A4"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="260, 0, 0, 0"/>
         <DataGrid Name ="DataClient"
-                      AutoGenerateColumns="False"
-                      IsReadOnly="True">
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Margin="0, 40, 0, 0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Идентификатор"
                                         Binding="{Binding id}"

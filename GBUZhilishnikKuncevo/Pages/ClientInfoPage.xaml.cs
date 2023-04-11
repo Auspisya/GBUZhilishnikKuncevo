@@ -25,6 +25,7 @@ namespace GBUZhilishnikKuncevo.Pages
         public ClientInfoPage(Client client)
         {
             InitializeComponent();
+            //Наполняем текстовые блоки информацией из БД
             TxbFullName.Text = client.surname.ToString() + " " + client.name.ToString() + " " + client.patronymic.ToString();
             TxbNumPassport.Text = client.Passport.passportNumber.ToString();
             TxbDateOfBirth.Text = client.dateOfBirth.ToShortDateString();
