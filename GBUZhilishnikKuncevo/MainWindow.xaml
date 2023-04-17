@@ -60,7 +60,7 @@
                         Content="Квартиросъёмщики"
                         Foreground="#0850A4"
                         FontSize="20"
-                        Margin="0, 0, 0, 5"/>
+                        Margin="0, 0, 0, 5" Cursor="Hand"/>
                 <Button Name="BtnCounterPage"
                         Click="BtnCounterPage_Click"
                         Style="{StaticResource MaterialDesignFlatButton}"

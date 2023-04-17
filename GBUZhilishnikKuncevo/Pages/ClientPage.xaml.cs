@@ -55,7 +55,7 @@ namespace GBUZhilishnikKuncevo.Pages
                     DataClient.ItemsSource = searchResults.ToList();
                 }
                 else {
-                    MessageBox.Show("Вы ничего не ввели", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    DataClient.ItemsSource = DBConnection.DBConnect.Client.ToList();
                 }
                 
 
@@ -73,5 +73,16 @@ namespace GBUZhilishnikKuncevo.Pages
             TxbSearch.Text = "";
         }
 
+        private void BtnEditInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new ClientEditPage((sender as Button).DataContext as Client));
+        }
+
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            //Обновляем таблицу. При редактировании данных придется перезапустить приложение
+            DataClient.ItemsSource = null;
+            DataClient.ItemsSource = DBConnection.DBConnect.Client.ToList();
+        }
     }
 }
