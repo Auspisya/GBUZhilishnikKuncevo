@@ -31,8 +31,16 @@ namespace GBUZhilishnikKuncevo.Pages
             TxbDateOfBirth.Text = client.dateOfBirth.ToShortDateString();
             TxbGender.Text = client.Gender.genderName.ToString();
             TxbPassportSeries.Text = client.Passport.passportSeries.ToString();
+            TxbPassportIssuedBy.Text = client.Passport.passportIssuedBy.ToString();
+            TxbDateOfIssue.Text = client.Passport.dateOfIssue.ToShortDateString();
+            TxbDivisionCode.Text = client.Passport.divisionCode.ToString();
+            TxbPlaceOfBirth.Text = client.Passport.placeOfBirth.ToString();
+            TxbWhoRegisteredTIN.Text = client.TIN.whoRegistered.ToString();
+            TxbTINRegistrationDate.Text = client.TIN.registrationDate.ToShortDateString();
+            TxbSNILSRegistrationDate.Text = client.SNILS.registrationDate.ToShortDateString();
             TxbSNILS.Text = client.SNILS.snilsNumber.ToString();
             TxbTIN.Text = client.TIN.tinNumber.ToString();
+
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

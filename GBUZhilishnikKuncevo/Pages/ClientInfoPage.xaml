@@ -5,78 +5,124 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="900" d:DesignWidth="800"
       Title="Информация о квартиросъёмщике">
 
     <Grid Background="White">
-        <Button Name="BtnBack"
-                Click="BtnBack_Click"
-                Style="{StaticResource MaterialDesignFlatButton}"
-                Content="Назад"
-                Foreground="#0850A4"
-                FontSize="20"
-                Margin="5, 5, 5, 5"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Bottom"/>
-        <Border CornerRadius="20"
-                Background="#063B79"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Center"
-                Width="800"
-                Margin="5,5,5,5">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="20"
-                                  Color="LightGray"
-                                  ShadowDepth="0"/>
-            </Border.Effect>
-            <StackPanel Orientation="Horizontal"
-                        Margin="6"
-                        HorizontalAlignment="Center">
-                <TextBlock Name="TxbFullName"
-                           Foreground="White"
-                           Text="[Имя]"
-                           TextAlignment="Center"
-                           FontSize="25"
-                           Style="{StaticResource MaterialDesignHeadline6TextBlock}"/>
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+            <StackPanel>
+                <Border CornerRadius="20"
+                        Background="#063B79"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        Width="800"
+                        Margin="5,5,5,5">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="20"
+                                          Color="LightGray"
+                                          ShadowDepth="0"/>
+                    </Border.Effect>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="6"
+                                HorizontalAlignment="Center">
+                        <TextBlock Name="TxbFullName"
+                                   Foreground="White"
+                                   Text="[Имя]"
+                                   TextAlignment="Center"
+                                   FontSize="25"
+                                   Style="{StaticResource MaterialDesignHeadline6TextBlock}"/>
+                    </StackPanel>
+                </Border>
+                <StackPanel Margin="5, 5, 5, 5">
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Пол:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbGender"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Дата рождения:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbDateOfBirth"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Серия паспорта:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbPassportSeries"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Номер паспорта:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbNumPassport"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Паспорт выдан:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbPassportIssuedBy"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Дата выдачи паспорта:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbDateOfIssue"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Код подразделения:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbDivisionCode"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Место рождения:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbPlaceOfBirth"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="ИНН:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbTIN"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Дата регистрации ИНН:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbTINRegistrationDate"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="ИНН Зарегистрирован:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbWhoRegisteredTIN"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Номер СНИЛС:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbSNILS"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Дата регистрации СНИЛС:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbSNILSRegistrationDate"/>
+                    </GroupBox>
+                </StackPanel>
+                <Button Name="BtnBack"
+                        Click="BtnBack_Click"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Content="Назад"
+                        Foreground="#0850A4"
+                        FontSize="20"
+                        Margin="5, 5, 5, 5"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"/>
             </StackPanel>
-        </Border>
-        <StackPanel Margin="10, 55, 5, 5">
-            <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                      Header="Пол:"
-                      FontSize="20">
-                <TextBlock Text="Номер"
-                           Name="TxbGender"/>
-            </GroupBox>
-            <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                      Header="Дата рождения:"
-                      FontSize="20">
-                <TextBlock Text="Номер"
-                           Name="TxbDateOfBirth"/>
-            </GroupBox>
-            <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                      Header="Серия паспорта:"
-                      FontSize="20">
-                <TextBlock Text="Номер"
-                           Name="TxbPassportSeries"/>
-            </GroupBox>
-            <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                      Header="Номер паспорта:"
-                      FontSize="20">
-                <TextBlock Text="Номер"
-                           Name="TxbNumPassport"/>
-            </GroupBox>
-            <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                      Header="ИНН:"
-                      FontSize="20">
-                <TextBlock Text="Номер"
-                           Name="TxbTIN"/>
-            </GroupBox>
-            <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                      Header="Номер СНИЛС:"
-                      FontSize="20">
-                <TextBlock Text="Номер"
-                           Name="TxbSNILS"/>
-            </GroupBox>
-        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

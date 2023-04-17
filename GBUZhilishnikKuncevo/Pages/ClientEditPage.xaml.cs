@@ -37,28 +37,41 @@ namespace GBUZhilishnikKuncevo.Pages
             TxbPassportSeries.Text = client.Passport.passportSeries.ToString();
             TxbPhoneNumber.Text = client.phoneNumber.ToString();
             TxbPlaceOfBirth.Text = client.Passport.placeOfBirth.ToString();
+            TxbTIN.Text = client.TIN.tinNumber.ToString();
+            TxbWhoRegisteredTIN.Text = client.TIN.whoRegistered.ToString();
+            TxbSNILS.Text = client.SNILS.snilsNumber.ToString();
             //Заполняем поля для выбора готовыми данными из БД
-            CmbGender.SelectedItem = client.Gender.genderName;
             CmbGender.DisplayMemberPath = "genderName";
             CmbGender.SelectedValuePath = "id";
             CmbGender.ItemsSource = DBConnection.DBConnect.Gender.ToList();
+            CmbGender.Text = client.Gender.genderName.ToString();
             //Заполняем дата-пикеры готовыми данными из БД
             DPDateOfBirth.Text = client.dateOfBirth.ToString();
             DPDateOfIssue.Text = client.Passport.dateOfIssue.ToString();
+            DPTINRegistationDate.Text = client.TIN.registrationDate.ToString();
+            DPSNILSRegistationDate.Text = client.SNILS.registrationDate.ToString();
 
+            //Присваиваем ID квартиросъёмщика, которого выбрали, чтобы использовать в дальнейшем
             clientId = client.id;
         }
 
+        /// <summary>
+        ///  Вносим изменения в базу данных или отказываемся от этого действия
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Вы точно хотите внести изменения?", " ", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
             {
+                //Возвращаемся обратно
                 Navigation.frameNav.GoBack();
             }
             else
             {
+                //Подключаемся к БД
                 menshakova_publicUtilitiesEntities context = new menshakova_publicUtilitiesEntities();
-
+                //Берем значения из элементов управления и вносим их в базу данных
                 var client = context.Client.Where(c => c.id == clientId).FirstOrDefault();
                 client.surname = TxbSurname.Text;
                 client.name = TxbName.Text;
@@ -67,10 +80,26 @@ namespace GBUZhilishnikKuncevo.Pages
                 client.genderId = (CmbGender.SelectedItem as Gender).id;
                 client.dateOfBirth = DateTime.Parse(DPDateOfBirth.Text);
                 client.Passport.placeOfBirth = TxbPlaceOfBirth.Text;
-
+                client.Passport.passportNumber = TxbPassportNumber.Text;
+                client.Passport.passportSeries = TxbPassportSeries.Text;
+                client.Passport.passportIssuedBy = TxbPassportIssuedBy.Text;
+                client.Passport.divisionCode = TxbDivisionCode.Text;
+                client.Passport.dateOfIssue = DateTime.Parse(DPDateOfIssue.Text);
+                client.TIN.tinNumber = TxbTIN.Text;
+                client.TIN.whoRegistered = TxbWhoRegisteredTIN.Text;
+                client.TIN.registrationDate = DateTime.Parse(DPTINRegistationDate.Text);
+                client.SNILS.snilsNumber = TxbSNILS.Text;
+                client.SNILS.registrationDate = DateTime.Parse(DPSNILSRegistationDate.Text);
+                //Сохраняем данные в БД
                 context.SaveChanges();
+                //Возвращаемся обратно
                 Navigation.frameNav.GoBack();
             }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

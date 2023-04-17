@@ -13,9 +13,9 @@
                       AutoGenerateColumns="False"
                       IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Идентификатор"
+                <DataGridTextColumn Header="ID"
                                         Binding="{Binding id}"
-                                        Width="*"/>
+                                        Width="50"/>
                 <DataGridTextColumn Header="Номер счётчика"
                                         Binding="{Binding counterNumber}"
                                         Width="*"/>
