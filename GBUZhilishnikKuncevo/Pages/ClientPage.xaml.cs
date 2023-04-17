@@ -31,12 +31,22 @@ namespace GBUZhilishnikKuncevo.Pages
             DataClient.ItemsSource = DBConnection.DBConnect.Client.ToList();
         }
 
+        /// <summary>
+        /// Позволяет посмотреть полную информацию по квартиросъемщику
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnShowInfo_Click(object sender, RoutedEventArgs e)
         {
             //В зависимости от выбранной строки, передаём её данные на следующую страницу и используем там
             Navigation.frameNav.Navigate(new ClientInfoPage((sender as Button).DataContext as Client));
         }
 
+        /// <summary>
+        /// Поиск по введённому запросу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
 
@@ -67,22 +77,47 @@ namespace GBUZhilishnikKuncevo.Pages
 
         }
 
+        /// <summary>
+        /// Убирает подсказку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxbSearch_GotFocus(object sender, RoutedEventArgs e)
         {
             //Убираем подпись
             TxbSearch.Text = "";
         }
 
+        /// <summary>
+        /// Переход на страницу редактирования квартиросъемщика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEditInfo_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new ClientEditPage((sender as Button).DataContext as Client));
         }
 
+        /// <summary>
+        /// Обновляем таблицу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             //Обновляем таблицу. При редактировании данных придется перезапустить приложение
             DataClient.ItemsSource = null;
             DataClient.ItemsSource = DBConnection.DBConnect.Client.ToList();
+        }
+
+        /// <summary>
+        /// Переход на страницу добавления квартиросъемщика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new ClientAddPage());
         }
     }
 }

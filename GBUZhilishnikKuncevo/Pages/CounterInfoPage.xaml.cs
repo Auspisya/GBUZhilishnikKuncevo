@@ -37,6 +37,11 @@ namespace GBUZhilishnikKuncevo.Pages
             TxbStreet.Text = counter.Apartment.Address.street.ToString();
         }
 
+        /// <summary>
+        /// Возвращаемся назад
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.GoBack();

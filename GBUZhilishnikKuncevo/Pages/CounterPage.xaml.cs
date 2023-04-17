@@ -30,6 +30,11 @@ namespace GBUZhilishnikKuncevo.Pages
             DataCounter.ItemsSource = DBConnection.DBConnect.Counter.ToList();
         }
 
+        /// <summary>
+        /// Переход на страницу с доп. информацией
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnShowInfo_Click(object sender, RoutedEventArgs e)
         {
             //В зависимости от выбранной строки, передаём её данные на следующую страницу и используем там

@@ -29,11 +29,21 @@ namespace GBUZhilishnikKuncevo
             MainFrame.Navigate(new WelcomePage());
         }
 
+        /// <summary>
+        /// Переход на страницу с квартиросъемщиками
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnClientPage_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new ClientPage());
         }
 
+        /// <summary>
+        /// Переход на страницу с счётчиками
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCounterPage_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new CounterPage());

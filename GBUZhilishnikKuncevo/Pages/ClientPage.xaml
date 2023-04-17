@@ -34,6 +34,14 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Right"
                 Margin="0, 0, 0, 0"/>
+        <Button Name="BtnAdd"
+                Click="BtnAdd_Click"
+                Content="Добавить"
+                Foreground="#0850A4"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="0, 0, 90, 0"/>
         <DataGrid Name ="DataClient"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
@@ -51,7 +59,7 @@
                 <DataGridTextColumn Header="Отчество"
                                         Binding="{Binding patronymic}"
                                         Width="*"/>
-                <DataGridTextColumn Header="Н. телефона"
+                <DataGridTextColumn Header="Номер телефона"
                                         Binding="{Binding phoneNumber}"
                                         Width="*"/>
                 <DataGridTemplateColumn Width="*">

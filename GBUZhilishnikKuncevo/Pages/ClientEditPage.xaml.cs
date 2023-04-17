@@ -48,7 +48,7 @@ namespace GBUZhilishnikKuncevo.Pages
             //Заполняем дата-пикеры готовыми данными из БД
             DPDateOfBirth.Text = client.dateOfBirth.ToString();
             DPDateOfIssue.Text = client.Passport.dateOfIssue.ToString();
-            DPTINRegistationDate.Text = client.TIN.registrationDate.ToString();
+            DPTINRegistrationDate.Text = client.TIN.registrationDate.ToString();
             DPSNILSRegistationDate.Text = client.SNILS.registrationDate.ToString();
 
             //Присваиваем ID квартиросъёмщика, которого выбрали, чтобы использовать в дальнейшем
@@ -87,7 +87,7 @@ namespace GBUZhilishnikKuncevo.Pages
                 client.Passport.dateOfIssue = DateTime.Parse(DPDateOfIssue.Text);
                 client.TIN.tinNumber = TxbTIN.Text;
                 client.TIN.whoRegistered = TxbWhoRegisteredTIN.Text;
-                client.TIN.registrationDate = DateTime.Parse(DPTINRegistationDate.Text);
+                client.TIN.registrationDate = DateTime.Parse(DPTINRegistrationDate.Text);
                 client.SNILS.snilsNumber = TxbSNILS.Text;
                 client.SNILS.registrationDate = DateTime.Parse(DPSNILSRegistationDate.Text);
                 //Сохраняем данные в БД
@@ -97,9 +97,14 @@ namespace GBUZhilishnikKuncevo.Pages
             }
         }
 
+        /// <summary>
+        /// Возвращаемся назад
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.frameNav.GoBack();
         }
     }
 }
