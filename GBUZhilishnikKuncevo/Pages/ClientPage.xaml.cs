@@ -119,5 +119,32 @@ namespace GBUZhilishnikKuncevo.Pages
         {
             Navigation.frameNav.Navigate(new ClientAddPage());
         }
+        /// <summary>
+        /// Удаление квартиросъемщика из БД
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < DataClient.SelectedItems.Count; i++)
+                {
+                    Client client = DataClient.SelectedItems[i] as Client;
+                    DBConnection.DBConnect.Client.Remove(client);
+                }
+
+                DBConnection.DBConnect.SaveChanges();
+                MessageBox.Show("Данные успешно удалены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information
+                    );
+                DataClient.ItemsSource = null;
+                DataClient.ItemsSource = DBConnection.DBConnect.Client.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
+            }
+
+        }
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="800"
-      Title="ClientAddPage">
+      Title="Добавление данных о квартиросъемщике">
 
     <Grid Background="White">
         <ScrollViewer VerticalScrollBarVisibility="Visible">

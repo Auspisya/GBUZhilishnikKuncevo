@@ -48,5 +48,10 @@ namespace GBUZhilishnikKuncevo
         {
             Navigation.frameNav.Navigate(new CounterPage());
         }
+
+        private void BtnBankBookPage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

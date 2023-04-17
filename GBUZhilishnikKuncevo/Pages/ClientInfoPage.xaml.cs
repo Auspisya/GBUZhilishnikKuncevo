@@ -40,7 +40,6 @@ namespace GBUZhilishnikKuncevo.Pages
             TxbSNILSRegistrationDate.Text = client.SNILS.registrationDate.ToShortDateString();
             TxbSNILS.Text = client.SNILS.snilsNumber.ToString();
             TxbTIN.Text = client.TIN.tinNumber.ToString();
-
         }
 
         /// <summary>

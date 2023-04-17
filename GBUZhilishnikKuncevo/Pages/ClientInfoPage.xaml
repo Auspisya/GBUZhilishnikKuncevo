@@ -112,6 +112,12 @@
                         <TextBlock Text="Номер"
                                    Name="TxbSNILSRegistrationDate"/>
                     </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Номер лицевого счёта:"
+                              FontSize="20">
+                        <TextBlock Text="Номер"
+                                   Name="TxbBankBookNumber"/>
+                    </GroupBox>
                 </StackPanel>
                 <Button Name="BtnBack"
                         Click="BtnBack_Click"
