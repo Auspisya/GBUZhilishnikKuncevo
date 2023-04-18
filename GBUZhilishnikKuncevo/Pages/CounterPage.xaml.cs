@@ -40,5 +40,58 @@ namespace GBUZhilishnikKuncevo.Pages
             //В зависимости от выбранной строки, передаём её данные на следующую страницу и используем там
             Navigation.frameNav.Navigate(new CounterInfoPage((sender as Button).DataContext as Counter));
         }
+
+        /// <summary>
+        /// Поиск записи по номеру счётчика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (TxbSearch.Text != "")
+                {
+                    string searchString = TxbSearch.Text.ToLower();
+
+                    var itemsList = DBConnection.DBConnect.Counter.ToList();
+
+                    //Ищем совпадения в таблице по фамилии
+                    var searchResults = itemsList.Where(item => item.counterNumber.ToLower().Contains(searchString)).ToList();
+
+                    //Заполняем таблицу записями, где есть совпадения
+                    DataCounter.ItemsSource = searchResults.ToList();
+                }
+                else
+                {
+                    DataCounter.ItemsSource = DBConnection.DBConnect.Client.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Непредвиденная ошибка", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /// <summary>
+        /// Заполнение таблицы актуальными данными из БД
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            DataCounter.ItemsSource = null;
+            DataCounter.ItemsSource = DBConnection.DBConnect.Counter.ToList();
+        }
+
+        /// <summary>
+        /// Убирает подсказку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxbSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TxbSearch.Text = "";
+        }
     }
 }

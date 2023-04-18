@@ -9,9 +9,35 @@
       Title="Счётчики">
 
     <Grid Background="White">
+        <TextBox Name="TxbSearch"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 Text="Введите номер счётчика для поиска..."
+                 Style="{StaticResource MaterialDesignTextBox}"
+                 Width="250"
+                 GotFocus="TxbSearch_GotFocus"
+                 CaretBrush="#FF0850A4"
+                 SelectionBrush="#FF0850A4"/>
+        <Button Name="BtnSearch"
+                Click="BtnSearch_Click"
+                Content="Искать"
+                Foreground="#0850A4"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="260, 0, 0, 0"/>
+        <Button Name="BtnRefresh"
+                Click="BtnRefresh_Click"
+                Content="Обновить"
+                Foreground="#0850A4"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="0, 0, 0, 0" Cursor="Hand"/>
         <DataGrid Name ="DataCounter"
-                      AutoGenerateColumns="False"
-                      IsReadOnly="True">
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Margin="0, 40, 0, 0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"
                                         Binding="{Binding id}"

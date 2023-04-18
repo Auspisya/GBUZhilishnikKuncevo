@@ -50,7 +50,6 @@ namespace GBUZhilishnikKuncevo.Pages
         /// <param name="e"></param>
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
                 if (TxbSearch.Text != "")
@@ -75,7 +74,6 @@ namespace GBUZhilishnikKuncevo.Pages
             {
                 MessageBox.Show("Непредвиденная ошибка", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
 
         /// <summary>

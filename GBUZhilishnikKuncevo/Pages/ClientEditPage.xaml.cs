@@ -62,38 +62,53 @@ namespace GBUZhilishnikKuncevo.Pages
         /// <param name="e"></param>
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Вы точно хотите внести изменения?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            if (TxbDivisionCode.Text == "" || TxbName.Text == "" || TxbPassportIssuedBy.Text == "" ||
+                TxbPassportNumber.Text == "" || TxbPassportSeries.Text == "" || TxbPatronymic.Text == "" ||
+                TxbPhoneNumber.Text == "" || TxbPlaceOfBirth.Text == "" || TxbSNILS.Text == "" || TxbSurname.Text == "" ||
+                TxbTIN.Text == "" || TxbWhoRegisteredTIN.Text == "" || CmbGender.Text == "" || DPDateOfBirth.Text == "" ||
+                DPDateOfIssue.Text == "" || DPSNILSRegistationDate.Text == "" || DPTINRegistrationDate.Text == "")
             {
+                MessageBox.Show("Нужно заполнить все поля!",
+                    "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else {
+                if (MessageBox.Show("Вы точно хотите внести изменения?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                {
 
+                }
+                else
+                {
+                    //Подключаемся к БД
+                    menshakova_publicUtilitiesEntities context = new menshakova_publicUtilitiesEntities();
+                    //Берем значения из элементов управления и вносим их в базу данных
+                    var client = context.Client.Where(c => c.id == clientId).FirstOrDefault();
+                    client.surname = TxbSurname.Text;
+                    client.name = TxbName.Text;
+                    client.patronymic = TxbPatronymic.Text;
+                    client.phoneNumber = TxbPhoneNumber.Text;
+                    client.genderId = (CmbGender.SelectedItem as Gender).id;
+                    client.dateOfBirth = DateTime.Parse(DPDateOfBirth.Text);
+                    client.Passport.placeOfBirth = TxbPlaceOfBirth.Text;
+                    client.Passport.passportNumber = TxbPassportNumber.Text;
+                    client.Passport.passportSeries = TxbPassportSeries.Text;
+                    client.Passport.passportIssuedBy = TxbPassportIssuedBy.Text;
+                    client.Passport.divisionCode = TxbDivisionCode.Text;
+                    client.Passport.dateOfIssue = DateTime.Parse(DPDateOfIssue.Text);
+                    client.TIN.tinNumber = TxbTIN.Text;
+                    client.TIN.whoRegistered = TxbWhoRegisteredTIN.Text;
+                    client.TIN.registrationDate = DateTime.Parse(DPTINRegistrationDate.Text);
+                    client.SNILS.snilsNumber = TxbSNILS.Text;
+                    client.SNILS.registrationDate = DateTime.Parse(DPSNILSRegistationDate.Text);
+                    //Сохраняем данные в БД
+                    context.SaveChanges();
+                    MessageBox.Show("Данные успешно изменены!",
+                            "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Navigation.frameNav.GoBack();
+                    //Возвращаемся обратно
+                    Navigation.frameNav.GoBack();
+                }
             }
-            else
-            {
-                //Подключаемся к БД
-                menshakova_publicUtilitiesEntities context = new menshakova_publicUtilitiesEntities();
-                //Берем значения из элементов управления и вносим их в базу данных
-                var client = context.Client.Where(c => c.id == clientId).FirstOrDefault();
-                client.surname = TxbSurname.Text;
-                client.name = TxbName.Text;
-                client.patronymic = TxbPatronymic.Text;
-                client.phoneNumber = TxbPhoneNumber.Text;
-                client.genderId = (CmbGender.SelectedItem as Gender).id;
-                client.dateOfBirth = DateTime.Parse(DPDateOfBirth.Text);
-                client.Passport.placeOfBirth = TxbPlaceOfBirth.Text;
-                client.Passport.passportNumber = TxbPassportNumber.Text;
-                client.Passport.passportSeries = TxbPassportSeries.Text;
-                client.Passport.passportIssuedBy = TxbPassportIssuedBy.Text;
-                client.Passport.divisionCode = TxbDivisionCode.Text;
-                client.Passport.dateOfIssue = DateTime.Parse(DPDateOfIssue.Text);
-                client.TIN.tinNumber = TxbTIN.Text;
-                client.TIN.whoRegistered = TxbWhoRegisteredTIN.Text;
-                client.TIN.registrationDate = DateTime.Parse(DPTINRegistrationDate.Text);
-                client.SNILS.snilsNumber = TxbSNILS.Text;
-                client.SNILS.registrationDate = DateTime.Parse(DPSNILSRegistationDate.Text);
-                //Сохраняем данные в БД
-                context.SaveChanges();
-                //Возвращаемся обратно
-                Navigation.frameNav.GoBack();
-            }
+            
         }
 
         /// <summary>
