@@ -50,59 +50,66 @@ namespace GBUZhilishnikKuncevo.Pages
         /// <param name="e"></param>
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (MessageBox.Show("Вы точно хотите добавить данные?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
             {
-                Passport passport = new Passport()
-                {
-                    passportNumber = TxbPassportNumber.Text,
-                    passportSeries = TxbPassportSeries.Text,
-                    passportIssuedBy = TxbPassportIssuedBy.Text,
-                    placeOfBirth = TxbPlaceOfBirth.Text,
-                    dateOfIssue = DateTime.Parse(DPDateOfIssue.Text),
-                    divisionCode = TxbDivisionCode.Text
-                };
-
-                SNILS snils = new SNILS()
-                { 
-                    snilsNumber = TxbSNILS.Text,
-                    registrationDate = DateTime.Parse(DPSNILSRegistationDate.Text)
-                };
-
-                TIN tin = new TIN()
-                {
-                    tinNumber = TxbTIN.Text,
-                    whoRegistered = TxbWhoRegisteredTIN.Text,
-                    registrationDate = DateTime.Parse(DPTINRegistrationDate.Text)
-                };
-
-                Client client = new Client()
-                {
-                    Gender = CmbGender.SelectedItem as Gender,
-                    name = TxbName.Text,
-                    surname = TxbSurname.Text,
-                    patronymic = TxbPatronymic.Text,
-                    phoneNumber = TxbPhoneNumber.Text,
-                    dateOfBirth = DateTime.Parse(DPDateOfBirth.Text),
-                    passportId = passport.id,
-                    snilsId = snils.id,
-                    tinId = tin.id
-                };
-                DBConnection.DBConnect.Client.Add(client);
-                DBConnection.DBConnect.Passport.Add(passport);
-                DBConnection.DBConnect.TIN.Add(tin);
-                DBConnection.DBConnect.SNILS.Add(snils);
-                DBConnection.DBConnect.SaveChanges();
-                MessageBox.Show("Данные успешно добавлены!",
-                    "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                Navigation.frameNav.GoBack();
-
+                
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message.ToString(),
-                    "Критическая ошибка",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                try
+                {
+                    Passport passport = new Passport()
+                    {
+                        passportNumber = TxbPassportNumber.Text,
+                        passportSeries = TxbPassportSeries.Text,
+                        passportIssuedBy = TxbPassportIssuedBy.Text,
+                        placeOfBirth = TxbPlaceOfBirth.Text,
+                        dateOfIssue = DateTime.Parse(DPDateOfIssue.Text),
+                        divisionCode = TxbDivisionCode.Text
+                    };
+
+                    SNILS snils = new SNILS()
+                    {
+                        snilsNumber = TxbSNILS.Text,
+                        registrationDate = DateTime.Parse(DPSNILSRegistationDate.Text)
+                    };
+
+                    TIN tin = new TIN()
+                    {
+                        tinNumber = TxbTIN.Text,
+                        whoRegistered = TxbWhoRegisteredTIN.Text,
+                        registrationDate = DateTime.Parse(DPTINRegistrationDate.Text)
+                    };
+
+                    Client client = new Client()
+                    {
+                        Gender = CmbGender.SelectedItem as Gender,
+                        name = TxbName.Text,
+                        surname = TxbSurname.Text,
+                        patronymic = TxbPatronymic.Text,
+                        phoneNumber = TxbPhoneNumber.Text,
+                        dateOfBirth = DateTime.Parse(DPDateOfBirth.Text),
+                        passportId = passport.id,
+                        snilsId = snils.id,
+                        tinId = tin.id
+                    };
+                    DBConnection.DBConnect.Client.Add(client);
+                    DBConnection.DBConnect.Passport.Add(passport);
+                    DBConnection.DBConnect.TIN.Add(tin);
+                    DBConnection.DBConnect.SNILS.Add(snils);
+                    DBConnection.DBConnect.SaveChanges();
+                    MessageBox.Show("Данные успешно добавлены!",
+                        "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Navigation.frameNav.GoBack();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(),
+                        "Критическая ошибка",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                }
             }
         }
     }

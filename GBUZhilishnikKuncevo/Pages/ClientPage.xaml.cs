@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace GBUZhilishnikKuncevo.Pages
 {
@@ -126,25 +127,31 @@ namespace GBUZhilishnikKuncevo.Pages
         /// <param name="e"></param>
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (MessageBox.Show("Вы точно хотите удалить данные?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
             {
-                for (int i = 0; i < DataClient.SelectedItems.Count; i++)
+
+            }
+            else
+            {
+                try
                 {
-                    Client client = DataClient.SelectedItems[i] as Client;
-                    DBConnection.DBConnect.Client.Remove(client);
+                    for (int i = 0; i < DataClient.SelectedItems.Count; i++)
+                    {
+                        Client client = DataClient.SelectedItems[i] as Client;
+                        DBConnection.DBConnect.Client.Remove(client);
+                    }
+
+                    DBConnection.DBConnect.SaveChanges();
+                    MessageBox.Show("Данные успешно удалены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information
+                        );
+                    DataClient.ItemsSource = null;
+                    DataClient.ItemsSource = DBConnection.DBConnect.Client.ToList();
                 }
-
-                DBConnection.DBConnect.SaveChanges();
-                MessageBox.Show("Данные успешно удалены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information
-                    );
-                DataClient.ItemsSource = null;
-                DataClient.ItemsSource = DBConnection.DBConnect.Client.ToList();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
-            }
-
         }
     }
 }

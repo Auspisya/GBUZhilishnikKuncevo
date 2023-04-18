@@ -62,10 +62,9 @@ namespace GBUZhilishnikKuncevo.Pages
         /// <param name="e"></param>
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Вы точно хотите внести изменения?", " ", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            if (MessageBox.Show("Вы точно хотите внести изменения?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
             {
-                //Возвращаемся обратно
-                Navigation.frameNav.GoBack();
+
             }
             else
             {
