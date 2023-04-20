@@ -61,6 +61,7 @@
                         Foreground="#0850A4"
                         FontSize="20"
                         Margin="0, 0, 0, 5" 
+                        Height="40"
                         Cursor="Hand"/>
                 <Button Name="BtnBankBookPage"
                         Click="BtnBankBookPage_Click"
@@ -68,7 +69,8 @@
                         Content="Лицевые счета"
                         Foreground="#0850A4"
                         FontSize="20"
-                        Margin="0, 0, 0, 5" 
+                        Margin="0, 0, 0, 5"
+                        Height="40"
                         Cursor="Hand"/>
                 <Button Name="BtnCounterPage"
                         Click="BtnCounterPage_Click"
@@ -76,13 +78,15 @@
                         Content="Счётчики"
                         Foreground="#0850A4"
                         FontSize="20"
+                        Height="40"
                         Margin="0, 0, 0, 5"/>
                 <Button Name="BtnAccountingPage"
                         Click="BtnAccountingPage_Click"
                         Style="{StaticResource MaterialDesignFlatButton}"
-                        Content="Показания счётчиков"
+                        Content="Показания"
                         Foreground="#0850A4"
                         FontSize="20"
+                        Height="40"
                         Margin="0, 0, 0, 5" Cursor="Hand"/>
                 <Button Name="BtnServiceCheckPage"
                         Click="BtnServiceCheckPage_Click"
@@ -90,12 +94,14 @@
                         Content="Квитанции"
                         Foreground="#0850A4"
                         FontSize="20"
+                        Height="40"
                         Margin="0, 0, 0, 5"/>
                 <Button Name="BtnDebtPage"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Content="Задолженности"
                         Foreground="#0850A4"
                         FontSize="20"
+                        Height="40"
                         Margin="0, 0, 0, 5"/>
             </StackPanel>
         </Border>

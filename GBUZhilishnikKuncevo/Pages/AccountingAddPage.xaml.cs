@@ -64,7 +64,7 @@ namespace GBUZhilishnikKuncevo.Pages
             }
             else
             {
-                if (MessageBox.Show("Вы точно хотите добавить данные?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                if (MessageBox.Show("Вы точно хотите добавить показания?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
                 {
 
                 }
@@ -107,6 +107,23 @@ namespace GBUZhilishnikKuncevo.Pages
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Вывод единицы измерения в зависимости от выбранной услуги
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CmbService_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int service = (int)CmbService.SelectedValue;
+            string serviceId = (service - 1).ToString();
+            var itemsList = DBConnection.DBConnect.Service.ToList();
+
+            var accountingUnit = itemsList.Where(item => item.TypeOfService.id.ToString().Contains(serviceId)).ToList();
+
+            TxbUnit.Text = accountingUnit[0].unit;
+            //TxbCounterReading.Text = accountingUnit.Select(row => row.unit).ToString();
         }
     }
 }

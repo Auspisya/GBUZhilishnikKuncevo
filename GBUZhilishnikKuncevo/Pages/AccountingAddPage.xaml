@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Добавить показания счётчика">
+      Title="Добавить показание">
 
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center">
@@ -21,33 +21,37 @@
                         VerticalAlignment="Bottom"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Показание:"
-                              FontSize="20"
-                              Margin="5">
-                        <TextBox Name="TxbCounterReading"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Номер счётчика:"
-                              FontSize="20"
-                              Margin="5">
-                        <ComboBox Name="CmbCounterNumber"
-                                  Width="250"
-                                  IsTextSearchEnabled="True"
-                                  IsEditable="True"/>
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Услуга:"
                               FontSize="20"
                               Margin="5">
                         <ComboBox Name="CmbService"
-                                  Width="250"/>
+                                  Width="250"
+                                  SelectionChanged="CmbService_SelectionChanged"/>
                     </GroupBox>
-                </StackPanel>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Показание:"
+                              FontSize="20"
+                              Margin="5">
+                        <TextBox Name="TxbCounterReading"
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 VerticalAlignment="Top"/>
+                    </GroupBox>
+                <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Ед. измерения:"
+                              FontSize="20"
+                              Margin="5">
+                    <TextBox Name="TxbUnit"
+                             Style="{StaticResource MaterialDesignTextBox}"
+                             Width="250"
+                             CaretBrush="#FF0850A4"
+                             SelectionBrush="#FF0850A4"
+                             VerticalAlignment="Top"
+                             IsReadOnly="True"/>
+                </GroupBox>
+            </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата начала ведения учёта:"
@@ -72,6 +76,15 @@
                               FontSize="20"
                               Margin="5">
                     <ComboBox Name="CmbBankBook"
+                                  Width="250"
+                                  IsTextSearchEnabled="True"
+                                  IsEditable="True"/>
+                </GroupBox>
+                <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Номер счётчика:"
+                              FontSize="20"
+                              Margin="5">
+                    <ComboBox Name="CmbCounterNumber"
                                   Width="250"
                                   IsTextSearchEnabled="True"
                                   IsEditable="True"/>
