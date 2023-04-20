@@ -77,17 +77,22 @@
                         Foreground="#0850A4"
                         FontSize="20"
                         Margin="0, 0, 0, 5"/>
-                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                <Button Name="BtnAccountingPage"
+                        Click="BtnAccountingPage_Click"
+                        Style="{StaticResource MaterialDesignFlatButton}"
                         Content="Показания счётчиков"
                         Foreground="#0850A4"
                         FontSize="20"
-                        Margin="0, 0, 0, 5"/>
-                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                        Margin="0, 0, 0, 5" Cursor="Hand"/>
+                <Button Name="BtnServiceCheckPage"
+                        Click="BtnServiceCheckPage_Click"
+                        Style="{StaticResource MaterialDesignFlatButton}"
                         Content="Квитанции"
                         Foreground="#0850A4"
                         FontSize="20"
                         Margin="0, 0, 0, 5"/>
-                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                <Button Name="BtnDebtPage"
+                        Style="{StaticResource MaterialDesignFlatButton}"
                         Content="Задолженности"
                         Foreground="#0850A4"
                         FontSize="20"

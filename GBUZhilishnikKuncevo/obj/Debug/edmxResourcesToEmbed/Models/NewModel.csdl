@@ -56,8 +56,8 @@
     <NavigationProperty Name="Client" Relationship="Self.FK_BankBook_Client" FromRole="BankBook" ToRole="Client" />
     <NavigationProperty Name="Ownership" Relationship="Self.FK_BankBook_Ownership" FromRole="BankBook" ToRole="Ownership" />
     <NavigationProperty Name="Proprietary" Relationship="Self.FK_BankBook_Proprietary" FromRole="BankBook" ToRole="Proprietary" />
+    <NavigationProperty Name="ServiceCheck" Relationship="Self.FK_ServiceCheck_BankBook" FromRole="BankBook" ToRole="ServiceCheck" />
     <NavigationProperty Name="TotalCheck" Relationship="Self.FK_TotalCheck_BankBook" FromRole="BankBook" ToRole="TotalCheck" />
-    <NavigationProperty Name="ServiceCheck" Relationship="menshakova_publicUtilitiesModel.FK_ServiceCheck_BankBook" FromRole="BankBook" ToRole="ServiceCheck" />
   </EntityType>
   <EntityType Name="Benefit">
     <Key>
@@ -167,9 +167,9 @@
     <Property Name="accountingId" Type="Int32" Nullable="false" />
     <Property Name="totalPayble" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Accounting" Relationship="Self.FK_Check_Accounting" FromRole="ServiceCheck" ToRole="Accounting" />
     <Property Name="bankBookId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="BankBook" Relationship="menshakova_publicUtilitiesModel.FK_ServiceCheck_BankBook" FromRole="ServiceCheck" ToRole="BankBook" />
+    <NavigationProperty Name="Accounting" Relationship="Self.FK_Check_Accounting" FromRole="ServiceCheck" ToRole="Accounting" />
+    <NavigationProperty Name="BankBook" Relationship="Self.FK_ServiceCheck_BankBook" FromRole="ServiceCheck" ToRole="BankBook" />
   </EntityType>
   <EntityType Name="SNILS">
     <Key>
@@ -342,6 +342,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ServiceCheck_BankBook">
+    <End Role="BankBook" Type="Self.BankBook" Multiplicity="1" />
+    <End Role="ServiceCheck" Type="Self.ServiceCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankBook">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ServiceCheck">
+        <PropertyRef Name="bankBookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TotalCheck_BankBook">
     <End Role="BankBook" Type="Self.BankBook" Multiplicity="1" />
     <End Role="TotalCheck" Type="Self.TotalCheck" Multiplicity="*" />
@@ -450,7 +462,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="menshakova_publicUtilitiesEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="menshakova_publicUtilitiesEntitiesNew" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accounting" EntityType="Self.Accounting" />
     <EntitySet Name="Address" EntityType="Self.Address" />
     <EntitySet Name="Apartment" EntityType="Self.Apartment" />
@@ -507,6 +519,10 @@
       <End Role="Proprietary" EntitySet="Proprietary" />
       <End Role="BankBook" EntitySet="BankBook" />
     </AssociationSet>
+    <AssociationSet Name="FK_ServiceCheck_BankBook" Association="Self.FK_ServiceCheck_BankBook">
+      <End Role="BankBook" EntitySet="BankBook" />
+      <End Role="ServiceCheck" EntitySet="ServiceCheck" />
+    </AssociationSet>
     <AssociationSet Name="FK_TotalCheck_BankBook" Association="Self.FK_TotalCheck_BankBook">
       <End Role="BankBook" EntitySet="BankBook" />
       <End Role="TotalCheck" EntitySet="TotalCheck" />
@@ -543,62 +559,5 @@
       <End Role="TypeOfService" EntitySet="TypeOfService" />
       <End Role="Service" EntitySet="Service" />
     </AssociationSet>
-    <FunctionImport Name="sp_alterdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_creatediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_dropdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(menshakova_publicUtilitiesModel.sp_helpdiagramdefinition_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(menshakova_publicUtilitiesModel.sp_helpdiagrams_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_renamediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="new_diagramname" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_upgraddiagrams" />
-    <AssociationSet Name="FK_ServiceCheck_BankBook" Association="menshakova_publicUtilitiesModel.FK_ServiceCheck_BankBook">
-      <End Role="BankBook" EntitySet="BankBook" />
-      <End Role="ServiceCheck" EntitySet="ServiceCheck" />
-    </AssociationSet>
   </EntityContainer>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
-  <Association Name="FK_ServiceCheck_BankBook">
-    <End Type="menshakova_publicUtilitiesModel.BankBook" Role="BankBook" Multiplicity="1" />
-    <End Type="menshakova_publicUtilitiesModel.ServiceCheck" Role="ServiceCheck" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BankBook">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="ServiceCheck">
-        <PropertyRef Name="bankBookId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

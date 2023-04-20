@@ -53,5 +53,15 @@ namespace GBUZhilishnikKuncevo
         {
 
         }
+
+        private void BtnAccountingPage_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new AccountingPage());
+        }
+
+        private void BtnServiceCheckPage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

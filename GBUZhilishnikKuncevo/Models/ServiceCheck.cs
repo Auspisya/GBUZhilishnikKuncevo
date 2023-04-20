@@ -18,7 +18,9 @@ namespace GBUZhilishnikKuncevo.Models
         public int accountingId { get; set; }
         public Nullable<decimal> totalPayble { get; set; }
         public string description { get; set; }
+        public int bankBookId { get; set; }
     
         public virtual Accounting Accounting { get; set; }
+        public virtual BankBook BankBook { get; set; }
     }
 }

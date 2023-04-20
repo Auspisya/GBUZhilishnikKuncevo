@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище menshakova_publicUtilitiesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище menshakova_publicUtilitiesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accounting">
           <Key>
             <PropertyRef Name="id" />
@@ -143,6 +143,7 @@
           <Property Name="accountingId" Type="int" Nullable="false" />
           <Property Name="totalPayble" Type="money" />
           <Property Name="description" Type="nvarchar" MaxLength="200" />
+          <Property Name="bankBookId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="SNILS">
           <Key>
@@ -380,6 +381,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ServiceCheck_BankBook">
+          <End Role="BankBook" Type="Self.BankBook" Multiplicity="1" />
+          <End Role="ServiceCheck" Type="Self.ServiceCheck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankBook">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ServiceCheck">
+              <PropertyRef Name="bankBookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TotalCheck_BankBook">
           <End Role="BankBook" Type="Self.BankBook" Multiplicity="1" />
           <End Role="TotalCheck" Type="Self.TotalCheck" Multiplicity="*" />
@@ -416,37 +429,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Хранилище menshakova_publicUtilitiesModelContainer">
           <EntitySet Name="Accounting" EntityType="Self.Accounting" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
@@ -528,6 +510,10 @@
             <End Role="TypeOfService" EntitySet="TypeOfService" />
             <End Role="Service" EntitySet="Service" />
           </AssociationSet>
+          <AssociationSet Name="FK_ServiceCheck_BankBook" Association="Self.FK_ServiceCheck_BankBook">
+            <End Role="BankBook" EntitySet="BankBook" />
+            <End Role="ServiceCheck" EntitySet="ServiceCheck" />
+          </AssociationSet>
           <AssociationSet Name="FK_TotalCheck_BankBook" Association="Self.FK_TotalCheck_BankBook">
             <End Role="BankBook" EntitySet="BankBook" />
             <End Role="TotalCheck" EntitySet="TotalCheck" />
@@ -541,7 +527,8 @@
             <End Role="TotalCheck" EntitySet="TotalCheck" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="menshakova_publicUtilitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -601,6 +588,7 @@
           <NavigationProperty Name="Client" Relationship="Self.FK_BankBook_Client" FromRole="BankBook" ToRole="Client" />
           <NavigationProperty Name="Ownership" Relationship="Self.FK_BankBook_Ownership" FromRole="BankBook" ToRole="Ownership" />
           <NavigationProperty Name="Proprietary" Relationship="Self.FK_BankBook_Proprietary" FromRole="BankBook" ToRole="Proprietary" />
+          <NavigationProperty Name="ServiceCheck" Relationship="Self.FK_ServiceCheck_BankBook" FromRole="BankBook" ToRole="ServiceCheck" />
           <NavigationProperty Name="TotalCheck" Relationship="Self.FK_TotalCheck_BankBook" FromRole="BankBook" ToRole="TotalCheck" />
         </EntityType>
         <EntityType Name="Benefit">
@@ -711,7 +699,9 @@
           <Property Name="accountingId" Type="Int32" Nullable="false" />
           <Property Name="totalPayble" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="bankBookId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Accounting" Relationship="Self.FK_Check_Accounting" FromRole="ServiceCheck" ToRole="Accounting" />
+          <NavigationProperty Name="BankBook" Relationship="Self.FK_ServiceCheck_BankBook" FromRole="ServiceCheck" ToRole="BankBook" />
         </EntityType>
         <EntityType Name="SNILS">
           <Key>
@@ -884,6 +874,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ServiceCheck_BankBook">
+          <End Role="BankBook" Type="Self.BankBook" Multiplicity="1" />
+          <End Role="ServiceCheck" Type="Self.ServiceCheck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankBook">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ServiceCheck">
+              <PropertyRef Name="bankBookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TotalCheck_BankBook">
           <End Role="BankBook" Type="Self.BankBook" Multiplicity="1" />
           <End Role="TotalCheck" Type="Self.TotalCheck" Multiplicity="*" />
@@ -992,7 +994,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="menshakova_publicUtilitiesEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="menshakova_publicUtilitiesEntitiesNew" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounting" EntityType="Self.Accounting" />
           <EntitySet Name="Address" EntityType="Self.Address" />
           <EntitySet Name="Apartment" EntityType="Self.Apartment" />
@@ -1049,6 +1051,10 @@
             <End Role="Proprietary" EntitySet="Proprietary" />
             <End Role="BankBook" EntitySet="BankBook" />
           </AssociationSet>
+          <AssociationSet Name="FK_ServiceCheck_BankBook" Association="Self.FK_ServiceCheck_BankBook">
+            <End Role="BankBook" EntitySet="BankBook" />
+            <End Role="ServiceCheck" EntitySet="ServiceCheck" />
+          </AssociationSet>
           <AssociationSet Name="FK_TotalCheck_BankBook" Association="Self.FK_TotalCheck_BankBook">
             <End Role="BankBook" EntitySet="BankBook" />
             <End Role="TotalCheck" EntitySet="TotalCheck" />
@@ -1085,54 +1091,13 @@
             <End Role="TypeOfService" EntitySet="TypeOfService" />
             <End Role="Service" EntitySet="Service" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(menshakova_publicUtilitiesModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(menshakova_publicUtilitiesModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище menshakova_publicUtilitiesModelContainer" CdmEntityContainer="menshakova_publicUtilitiesEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище menshakova_publicUtilitiesModelContainer" CdmEntityContainer="menshakova_publicUtilitiesEntitiesNew">
           <EntitySetMapping Name="Accounting">
             <EntityTypeMapping TypeName="menshakova_publicUtilitiesModel.Accounting">
               <MappingFragment StoreEntitySet="Accounting">
@@ -1283,6 +1248,7 @@
                 <ScalarProperty Name="accountingId" ColumnName="accountingId" />
                 <ScalarProperty Name="totalPayble" ColumnName="totalPayble" />
                 <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="bankBookId" ColumnName="bankBookId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1348,30 +1314,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище menshakova_publicUtilitiesModel.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище menshakova_publicUtilitiesModel.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище menshakova_publicUtilitiesModel.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище menshakova_publicUtilitiesModel.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="menshakova_publicUtilitiesModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище menshakova_publicUtilitiesModel.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="menshakova_publicUtilitiesModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище menshakova_publicUtilitiesModel.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище menshakova_publicUtilitiesModel.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
