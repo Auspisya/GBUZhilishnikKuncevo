@@ -2,6 +2,7 @@
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\App.xaml;;
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\MainWindow.xaml;;
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\AccountingAddPage.xaml;;
+FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\AccountingEditPage.xaml;;
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\AccountingPage.xaml;;
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\ClientAddPage.xaml;;
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\ClientEditPage.xaml;;
@@ -9,6 +10,6 @@ FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\Cli
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\ClientPage.xaml;;
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\CounterInfoPage.xaml;;
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\CounterPage.xaml;;
-FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\WelcomePage.xaml;;
 FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\DebtorsPage.xaml;;
+FC:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\Pages\WelcomePage.xaml;;
 

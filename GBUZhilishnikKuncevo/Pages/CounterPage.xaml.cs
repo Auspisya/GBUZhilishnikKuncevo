@@ -56,7 +56,7 @@ namespace GBUZhilishnikKuncevo.Pages
 
                     var itemsList = DBConnection.DBConnect.Counter.ToList();
 
-                    //Ищем совпадения в таблице по фамилии
+                    //Ищем совпадения в таблице по номеру счётчика
                     var searchResults = itemsList.Where(item => item.counterNumber.ToLower().Contains(searchString)).ToList();
 
                     //Заполняем таблицу записями, где есть совпадения

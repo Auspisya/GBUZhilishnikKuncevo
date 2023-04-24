@@ -99,7 +99,7 @@
                 <Button Name="BtnDebtPage"
                         Click="BtnDebtPage_Click"
                         Style="{StaticResource MaterialDesignFlatButton}"
-                        Content="Задолженности"
+                        Content="Должники"
                         Foreground="#0850A4"
                         FontSize="20"
                         Height="40"

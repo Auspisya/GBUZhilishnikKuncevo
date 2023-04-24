@@ -12,7 +12,7 @@
         <TextBox Name="TxbSearch"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"
-                 Text="Введите номер счётчика для поиска..."
+                 Text="Введите номер лицевого счёта для поиска..."
                  Style="{StaticResource MaterialDesignTextBox}"
                  Width="250"
                  GotFocus="TxbSearch_GotFocus"

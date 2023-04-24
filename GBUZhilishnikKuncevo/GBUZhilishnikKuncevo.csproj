@@ -93,6 +93,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AccountingEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AccountingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,6 +218,9 @@
     </Compile>
     <Compile Include="Pages\AccountingAddPage.xaml.cs">
       <DependentUpon>AccountingAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountingEditPage.xaml.cs">
+      <DependentUpon>AccountingEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AccountingPage.xaml.cs">
       <DependentUpon>AccountingPage.xaml</DependentUpon>

@@ -27,7 +27,9 @@ namespace GBUZhilishnikKuncevo.Pages
         public ClientEditPage(Client client)
         {
             InitializeComponent();
-            //Заполняем текстовые блоки готовыми данными из БД
+
+            #region Заполняем элементы управления данными из БД
+            // Заполняем текстовые блоки готовыми данными из БД
             TxbName.Text = client.name.ToString();
             TxbSurname.Text = client.surname.ToString();
             TxbPatronymic.Text = client.patronymic.ToString();
@@ -50,7 +52,7 @@ namespace GBUZhilishnikKuncevo.Pages
             DPDateOfIssue.Text = client.Passport.dateOfIssue.ToString();
             DPTINRegistrationDate.Text = client.TIN.registrationDate.ToString();
             DPSNILSRegistationDate.Text = client.SNILS.registrationDate.ToString();
-
+            #endregion
             //Присваиваем ID квартиросъёмщика, которого выбрали, чтобы использовать в дальнейшем
             clientId = client.id;
         }
@@ -80,8 +82,8 @@ namespace GBUZhilishnikKuncevo.Pages
                 {
                     //Подключаемся к БД
                     menshakova_publicUtilitiesEntities2 context = new menshakova_publicUtilitiesEntities2();
-                    //Берем значения из элементов управления и вносим их в базу данных
-                    var client = context.Client.Where(c => c.id == clientId).FirstOrDefault();
+                    #region Берем значения из элементов управления и вносим их в базу данных
+                    var client = context.Client.Where(item => item.id == clientId).FirstOrDefault();
                     client.surname = TxbSurname.Text;
                     client.name = TxbName.Text;
                     client.patronymic = TxbPatronymic.Text;
@@ -99,11 +101,11 @@ namespace GBUZhilishnikKuncevo.Pages
                     client.TIN.registrationDate = DateTime.Parse(DPTINRegistrationDate.Text);
                     client.SNILS.snilsNumber = TxbSNILS.Text;
                     client.SNILS.registrationDate = DateTime.Parse(DPSNILSRegistationDate.Text);
+                    #endregion
                     //Сохраняем данные в БД
                     context.SaveChanges();
                     MessageBox.Show("Данные успешно изменены!",
                             "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Navigation.frameNav.GoBack();
                     //Возвращаемся обратно
                     Navigation.frameNav.GoBack();
                 }

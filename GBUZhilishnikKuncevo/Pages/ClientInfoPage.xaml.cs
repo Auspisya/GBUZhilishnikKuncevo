@@ -25,7 +25,8 @@ namespace GBUZhilishnikKuncevo.Pages
         public ClientInfoPage(Client client)
         {
             InitializeComponent();
-            //Наполняем текстовые блоки информацией из БД
+
+            #region Наполняем текстовые блоки информацией из БД
             TxbFullName.Text = client.surname.ToString() + " " + client.name.ToString() + " " + client.patronymic.ToString();
             TxbNumPassport.Text = client.Passport.passportNumber.ToString();
             TxbDateOfBirth.Text = client.dateOfBirth.ToShortDateString();
@@ -40,6 +41,12 @@ namespace GBUZhilishnikKuncevo.Pages
             TxbSNILSRegistrationDate.Text = client.SNILS.registrationDate.ToShortDateString();
             TxbSNILS.Text = client.SNILS.snilsNumber.ToString();
             TxbTIN.Text = client.TIN.tinNumber.ToString();
+
+            var bankBookList = DBConnection.DBConnect.BankBook.ToList();
+            var bankBook = bankBookList.Where(item => item.clientId == client.id).ToList();
+
+            TxbBankBookNumber.Text = bankBook[0].bankBookNumber;
+            #endregion
         }
 
         /// <summary>
