@@ -10,15 +10,13 @@
 namespace GBUZhilishnikKuncevo.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ServiceCheck
+    public partial class sp_helpdiagrams_Result
     {
-        public int id { get; set; }
-        public int accountingId { get; set; }
-        public Nullable<decimal> totalPayble { get; set; }
-        public string description { get; set; }
-    
-        public virtual Accounting Accounting { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

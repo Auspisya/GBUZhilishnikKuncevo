@@ -63,5 +63,10 @@ namespace GBUZhilishnikKuncevo
         {
 
         }
+
+        private void BtnDebtPage_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new DebtorsPage());
+        }
     }
 }

@@ -97,12 +97,13 @@
                         Height="40"
                         Margin="0, 0, 0, 5"/>
                 <Button Name="BtnDebtPage"
+                        Click="BtnDebtPage_Click"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Content="Задолженности"
                         Foreground="#0850A4"
                         FontSize="20"
                         Height="40"
-                        Margin="0, 0, 0, 5"/>
+                        Margin="0, 0, 0, 5" Cursor="Hand"/>
             </StackPanel>
         </Border>
 

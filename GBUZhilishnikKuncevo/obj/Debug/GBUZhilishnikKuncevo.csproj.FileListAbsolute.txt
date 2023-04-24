@@ -48,3 +48,5 @@ C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\
 C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\AccountingPage.baml
 C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\AccountingAddPage.g.cs
 C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\AccountingAddPage.baml
+C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\DebtorsPage.g.cs
+C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\DebtorsPage.baml

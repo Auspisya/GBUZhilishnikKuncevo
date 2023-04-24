@@ -26,7 +26,9 @@ namespace GBUZhilishnikKuncevo.Models
         public System.DateTime accountingStart { get; set; }
         public System.DateTime accountingEnd { get; set; }
         public int serviceId { get; set; }
+        public Nullable<int> bankBookId { get; set; }
     
+        public virtual BankBook BankBook { get; set; }
         public virtual Counter Counter { get; set; }
         public virtual Service Service { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

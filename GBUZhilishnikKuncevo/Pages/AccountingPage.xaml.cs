@@ -24,7 +24,7 @@ namespace GBUZhilishnikKuncevo.Pages
         public AccountingPage()
         {
             InitializeComponent();
-
+            //Наполняем таблицу
             DataAccounting.ItemsSource = null;
             DataAccounting.ItemsSource = DBConnection.DBConnect.Accounting.ToList();
         }
@@ -41,7 +41,8 @@ namespace GBUZhilishnikKuncevo.Pages
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
-
+            DataAccounting.ItemsSource = null;
+            DataAccounting.ItemsSource = DBConnection.DBConnect.Accounting.ToList();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -50,11 +51,6 @@ namespace GBUZhilishnikKuncevo.Pages
         }
 
         private void BtnEditInfo_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
 
         }

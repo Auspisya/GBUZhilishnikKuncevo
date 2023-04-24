@@ -79,6 +79,7 @@ namespace GBUZhilishnikKuncevo.Pages
                             counterReading = double.Parse(TxbCounterReading.Text),
                             Service = CmbService.SelectedItem as Service,
                             Counter = CmbCounterNumber.SelectedItem as Counter,
+                            BankBook = CmbBankBook.SelectedItem as BankBook,
                             accountingStart = DateTime.Parse(DPDateOfStart.Text),
                             accountingEnd = DateTime.Parse(DPDateOfEnd.Text)
                         };
@@ -86,7 +87,6 @@ namespace GBUZhilishnikKuncevo.Pages
                         ServiceCheck serviceCheck = new ServiceCheck()
                         {
                             accountingId = accounting.id,
-                            BankBook = CmbBankBook.SelectedItem as BankBook,
                             totalPayble = serviceAccountingCheck * (decimal)accounting.Service.standartTariff,
                         };
 

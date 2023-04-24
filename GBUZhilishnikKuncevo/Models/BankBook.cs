@@ -17,7 +17,7 @@ namespace GBUZhilishnikKuncevo.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BankBook()
         {
-            this.ServiceCheck = new HashSet<ServiceCheck>();
+            this.Accounting = new HashSet<Accounting>();
             this.TotalCheck = new HashSet<TotalCheck>();
         }
     
@@ -29,12 +29,12 @@ namespace GBUZhilishnikKuncevo.Models
         public int typeOfOwnershipId { get; set; }
         public int clientId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Accounting> Accounting { get; set; }
         public virtual Apartment Apartment { get; set; }
         public virtual Client Client { get; set; }
         public virtual Ownership Ownership { get; set; }
         public virtual Proprietary Proprietary { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ServiceCheck> ServiceCheck { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TotalCheck> TotalCheck { get; set; }
     }
