@@ -79,7 +79,11 @@ namespace GBUZhilishnikKuncevo.Pages
             DataServiceCheck.ItemsSource = null;
             DataServiceCheck.ItemsSource = DBConnection.DBConnect.ServiceCheck.ToList();
         }
-
+        /// <summary>
+        /// Переадресация на страницу с итоговыми чеками
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnTotalCheck_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new TotalCheckPage());

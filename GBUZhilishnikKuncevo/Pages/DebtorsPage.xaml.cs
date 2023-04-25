@@ -53,7 +53,7 @@ namespace GBUZhilishnikKuncevo.Pages
             var debtorsList = DBConnection.DBConnect.TotalCheck.ToList();
             var clientsList = DBConnection.DBConnect.Client.ToList();
             //Смотрим квитанции, которые оплачены несвоевременно
-            var debtors = debtorsList.Where(item => item.PaymentState.paymentStateName.Contains("Оплачена несвоевременно")).ToList();
+            var debtors = debtorsList.Where(item => item.PaymentState.paymentStateName.Contains("Оплачено несвоевременно")).ToList();
             //Сохраняем идентификаторы клиентов, которые оплатили несвоевременно
             var clientsId = debtors.Select(item => item.BankBook.clientId).ToList();
 
@@ -99,7 +99,7 @@ namespace GBUZhilishnikKuncevo.Pages
                     var debtorsList = DBConnection.DBConnect.TotalCheck.ToList();
                     var clientsList = DBConnection.DBConnect.Client.ToList();
                     //Смотрим квитанции, которые оплачены несвоевременно
-                    var debtors = debtorsList.Where(item => item.PaymentState.paymentStateName.Contains("Оплачена несвоевременно")).ToList();
+                    var debtors = debtorsList.Where(item => item.PaymentState.paymentStateName.Contains("Оплачено несвоевременно")).ToList();
                     //Сохраняем идентификаторы клиентов, которые оплатили несвоевременно
                     var clientsId = debtors.Select(item => item.BankBook.clientId).ToList();
 
@@ -130,7 +130,7 @@ namespace GBUZhilishnikKuncevo.Pages
                     var debtorsList = DBConnection.DBConnect.TotalCheck.ToList();
                     var clientsList = DBConnection.DBConnect.Client.ToList();
                     //Смотрим квитанции, которые оплачены несвоевременно
-                    var debtors = debtorsList.Where(item => item.PaymentState.paymentStateName.Contains("Оплачена несвоевременно")).ToList();
+                    var debtors = debtorsList.Where(item => item.PaymentState.paymentStateName.Contains("Оплачено несвоевременно")).ToList();
                     //Сохраняем идентификаторы клиентов, которые оплатили несвоевременно
                     var clientsId = debtors.Select(item => item.BankBook.clientId).ToList();
 
@@ -170,7 +170,7 @@ namespace GBUZhilishnikKuncevo.Pages
             var debtorsList = DBConnection.DBConnect.TotalCheck.ToList();
             var clientsList = DBConnection.DBConnect.Client.ToList();
             //Смотрим квитанции, которые оплачены несвоевременно
-            var debtors = debtorsList.Where(item => item.PaymentState.paymentStateName.Contains("Оплачена несвоевременно")).ToList();
+            var debtors = debtorsList.Where(item => item.PaymentState.paymentStateName.Contains("Оплачено несвоевременно")).ToList();
             //Сохраняем идентификаторы клиентов, которые оплатили несвоевременно
             var clientsId = debtors.Select(item => item.BankBook.clientId).ToList();
 

@@ -1,4 +1,5 @@
 ﻿using GBUZhilishnikKuncevo.Classes;
+using GBUZhilishnikKuncevo.Pages.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,9 +45,14 @@ namespace GBUZhilishnikKuncevo.Pages
 
         }
 
+        /// <summary>
+        /// Переадресация на форму добавления чека в базу данных
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddTotalCheck_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.frameNav.Navigate(new TotalCheckAddPage());
         }
     }
 }
