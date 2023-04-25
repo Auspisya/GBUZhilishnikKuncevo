@@ -114,7 +114,7 @@ namespace GBUZhilishnikKuncevo.Pages
         }
 
         /// <summary>
-        /// Возвращаемся назад
+        /// Возвращает назад
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -61,7 +61,7 @@ namespace GBUZhilishnikKuncevo
 
         private void BtnServiceCheckPage_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.frameNav.Navigate(new ServiceCheckPage());
         }
 
         private void BtnDebtPage_Click(object sender, RoutedEventArgs e)

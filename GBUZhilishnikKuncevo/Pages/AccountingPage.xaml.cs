@@ -29,12 +29,20 @@ namespace GBUZhilishnikKuncevo.Pages
             DataAccounting.ItemsSource = null;
             DataAccounting.ItemsSource = DBConnection.DBConnect.Accounting.ToList();
         }
-
+        /// <summary>
+        /// Убирает подсказку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxbSearch_GotFocus(object sender, RoutedEventArgs e)
         {
             TxbSearch.Text = "";
         }
-
+        /// <summary>
+        /// Поиск по совпадению записей из БД, и добавление их в таблицу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -43,7 +51,6 @@ namespace GBUZhilishnikKuncevo.Pages
                 {
                     string searchString = TxbSearch.Text;
 
-                    var counterList = DBConnection.DBConnect.Counter.ToList();
                     var itemsList = DBConnection.DBConnect.Accounting.ToList();
 
                     var searchResults = itemsList.Where(item => item.BankBook.bankBookNumber.Contains(searchString)).ToList();
@@ -59,18 +66,30 @@ namespace GBUZhilishnikKuncevo.Pages
                 MessageBox.Show("Непредвиденная ошибка", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
+        /// <summary>
+        /// Обновление таблицы актуальными данными (перезаполнение)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             DataAccounting.ItemsSource = null;
             DataAccounting.ItemsSource = DBConnection.DBConnect.Accounting.ToList();
         }
-
+        /// <summary>
+        /// Переадресация на страницу добавления показания
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new AccountingAddPage());
         }
-
+        /// <summary>
+        /// Переадресация на страницу редактирования показания
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEditInfo_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new AccountingEditPage((sender as Button).DataContext as Accounting));

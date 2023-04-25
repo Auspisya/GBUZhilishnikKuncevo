@@ -74,12 +74,20 @@ namespace GBUZhilishnikKuncevo.Pages
             #endregion
 
         }
-
+        /// <summary>
+        /// Убирает подсказку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxbSearch_GotFocus(object sender, RoutedEventArgs e)
         {
             TxbSearch.Text = "";
         }
-
+        /// <summary>
+        /// Поиск совпадений в базе данных, и вывод по ним записей в таблицу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -150,7 +158,11 @@ namespace GBUZhilishnikKuncevo.Pages
                 MessageBox.Show("Непредвиденная ошибка", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
+        /// <summary>
+        /// Поиск должников
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             #region Костыль, выводящий должников
@@ -178,7 +190,11 @@ namespace GBUZhilishnikKuncevo.Pages
             DataDebtors.ItemsSource = clientData.ToList();
             #endregion
         }
-
+        /// <summary>
+        /// Перенаправляет на страницу с дополнительной информацией по выбранному объекту
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnShowInfo_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new ClientInfoPage((sender as Button).DataContext as Client));

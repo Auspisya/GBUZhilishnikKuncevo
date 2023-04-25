@@ -35,6 +35,10 @@ namespace GBUZhilishnikKuncevo.Pages
             TxbEntrance.Text = counter.Apartment.Address.entranceNumber.ToString();
             TxbFloor.Text = counter.Apartment.Address.floorNumber.ToString();
             TxbStreet.Text = counter.Apartment.Address.street.ToString();
+
+            var bankBookList = DBConnection.DBConnect.BankBook.ToList();
+            var bankBook = bankBookList.Where(item => item.apartmentId == counter.apartmentId).ToList();
+            TxbBankBook.Text = bankBook[0].bankBookNumber;
         }
 
         /// <summary>
