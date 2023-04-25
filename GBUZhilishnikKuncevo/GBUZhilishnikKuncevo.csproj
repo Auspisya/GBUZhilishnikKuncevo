@@ -133,6 +133,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TotalCheckPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\WelcomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -252,6 +256,9 @@
     </Compile>
     <Compile Include="Pages\ServiceCheckPage.xaml.cs">
       <DependentUpon>ServiceCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TotalCheckPage.xaml.cs">
+      <DependentUpon>TotalCheckPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>

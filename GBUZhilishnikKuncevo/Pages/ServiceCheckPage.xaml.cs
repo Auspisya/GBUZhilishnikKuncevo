@@ -79,5 +79,10 @@ namespace GBUZhilishnikKuncevo.Pages
             DataServiceCheck.ItemsSource = null;
             DataServiceCheck.ItemsSource = DBConnection.DBConnect.ServiceCheck.ToList();
         }
+
+        private void BtnTotalCheck_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new TotalCheckPage());
+        }
     }
 }

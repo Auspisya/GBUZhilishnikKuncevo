@@ -45,7 +45,11 @@ namespace GBUZhilishnikKuncevo.Pages
             var bankBookList = DBConnection.DBConnect.BankBook.ToList();
             var bankBook = bankBookList.Where(item => item.clientId == client.id).ToList();
 
-            TxbBankBookNumber.Text = bankBook[0].bankBookNumber;
+
+            CmbBankBook.DisplayMemberPath = "bankBookNumber";
+            CmbBankBook.SelectedValuePath = "id";
+            CmbBankBook.ItemsSource = bankBook;
+            CmbBankBook.Text = bankBook[0].bankBookNumber.ToString();
             #endregion
         }
 

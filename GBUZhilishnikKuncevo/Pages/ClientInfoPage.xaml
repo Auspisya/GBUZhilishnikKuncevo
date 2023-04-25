@@ -115,8 +115,9 @@
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Номер лицевого счёта:"
                               FontSize="20">
-                        <TextBlock Text="Номер"
-                                   Name="TxbBankBookNumber"/>
+                        <ComboBox Name="CmbBankBook">
+                            
+                        </ComboBox>
                     </GroupBox>
                 </StackPanel>
                 <Button Name="BtnBack"
