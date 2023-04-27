@@ -1,12 +1,12 @@
-﻿<Page x:Class="GBUZhilishnikKuncevo.Pages.ClientAddPage"
+﻿<Page x:Class="GBUZhilishnikKuncevo.Pages.BankBookEditPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="670" d:DesignWidth="800"
-      Title="Добавление данных о квартиросъемщике">
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="Редактирование лицевого счёта">
 
     <Grid Background="White">
         <ScrollViewer VerticalScrollBarVisibility="Visible">
@@ -20,212 +20,208 @@
                         Margin="5, 5, 5, 5"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"/>
-                <TextBlock Text="Личные данные:"
+                <TextBlock Text="Общие данные ЛС:"
                            FontSize="20"
                            Margin="5"
                            Foreground="#FF0850A4"
                            Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Фамилия:"
+                              Header="Номер лицевого счёта:"
                               FontSize="20"
                               Margin="5">
-                        <TextBox Name="TxbSurname"
+                        <TextBox Name="TxbBankBookNumber"
                              Style="{StaticResource MaterialDesignTextBox}"
                              Width="250"
                              CaretBrush="#FF0850A4"
                              SelectionBrush="#FF0850A4"
+                             Text="Name"
                              VerticalAlignment="Top"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Имя:"
+                              Header="Организация:"
                               FontSize="20"
                               Margin="5">
-                        <TextBox Name="TxbName"
+                        <TextBox Name="TxbOrganization"
                              Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
+                             Width="510"
                              CaretBrush="#FF0850A4"
                              SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Отчество:"
-                              FontSize="20"
-                              Margin="5">
-                        <TextBox Name="TxbPatronymic"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
+                             Text="Name"
                              VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
+                <TextBlock Text="Данные о помещении:"
+                           FontSize="20"
+                           Margin="5"
+                           Foreground="#FF0850A4"
+                           Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Номер телефона:"
+                              Header="Тип собственности:"
                               FontSize="20"
                               Margin="5">
-                        <TextBox Name="TxbPhoneNumber"
-                                 Style="{StaticResource MaterialDesignTextBox}"
-                                 Width="250"
-                                 CaretBrush="#FF0850A4"
-                                 SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Пол:"
-                              FontSize="20"
-                              Margin="5">
-                        <ComboBox Name="CmbGender"
+                        <ComboBox Name="CmbProprietary"
                                   Width="250"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Дата рождения:"
+                              Header="Тип собственника:"
                               FontSize="20"
                               Margin="5">
-                        <DatePicker Name="DPDateOfBirth"
-                                    Width="250"
-                                    BorderBrush="#FF0850A4"/>
+                        <ComboBox Name="CmbOwnership"
+                                  Width="250"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Кол-во проживающих:"
+                              FontSize="20"
+                              Margin="5">
+                        <TextBox Name="TxbNumberOfResidents"
+                             Style="{StaticResource MaterialDesignTextBox}"
+                             Width="250"
+                             CaretBrush="#FF0850A4"
+                             SelectionBrush="#FF0850A4"
+                             Text="Name"
+                             VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
-                <TextBlock Text="Паспортные данные:"
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Общая площадь:"
+                              FontSize="20"
+                              Margin="5">
+                        <TextBox Name="TxbApartmentArea"
+                             Style="{StaticResource MaterialDesignTextBox}"
+                             Width="250"
+                             CaretBrush="#FF0850A4"
+                             SelectionBrush="#FF0850A4"
+                             Text="Name"
+                             VerticalAlignment="Top"/>
+                    </GroupBox>
+                </StackPanel>
+                <TextBlock Text="Адрес помещения:"
                            FontSize="20"
                            Margin="5"
                            Foreground="#FF0850A4"
                            Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Серия паспорта:"
+                              Header="Город:"
                               FontSize="20"
                               Margin="5">
-                        <TextBox Name="TxbPassportSeries"
+                        <TextBox Name="TxbCity"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
+                                 Text="Name"
                                  VerticalAlignment="Top"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Номер паспорта:"
+                              Header="Район:"
                               FontSize="20"
                               Margin="5">
-                        <TextBox Name="TxbPassportNumber"
+                        <TextBox Name="TxbArea"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
+                                 Text="Name"
                                  VerticalAlignment="Top"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Паспорт выдан:"
+                              Header="Улица:"
                               FontSize="20"
                               Margin="5">
-                        <TextBox Name="TxbPassportIssuedBy"
+                        <TextBox Name="TxbStreet"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
+                                 Text="Name"
                                  VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Дата выдачи паспорта:"
+                              Header="Номер здания:"
                               FontSize="20"
                               Margin="5">
-                        <DatePicker Name="DPDateOfIssue"
-                                    Width="250"
-                                    BorderBrush="#FF0850A4"/>
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Код подразделения:"
-                              FontSize="20"
-                              Margin="5">
-                        <TextBox Name="TxbDivisionCode"
+                        <TextBox Name="TxbBuildingNumber"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
+                                 Text="Name"
                                  VerticalAlignment="Top"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Место рождения:"
+                              Header="Корпус (если есть):"
                               FontSize="20"
                               Margin="5">
-                        <TextBox Name="TxbPlaceOfBirth"
+                        <TextBox Name="TxbBuildingCorpse"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
+                                 Text="Name"
+                                 VerticalAlignment="Top"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Номер подъезда:"
+                              FontSize="20"
+                              Margin="5">
+                        <TextBox Name="TxbEntranceNumber"
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 Text="Name"
                                  VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
-                <TextBlock Text="Данные ИНН:"
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Этаж:"
+                              FontSize="20"
+                              Margin="5">
+                        <TextBox Name="TxbFloorNumber"
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 Text="Name"
+                                 VerticalAlignment="Top"/>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                              Header="Номер помещения:"
+                              FontSize="20"
+                              Margin="5">
+                        <TextBox Name="TxbApartmentNumber"
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 Text="Name"
+                                 VerticalAlignment="Top"/>
+                    </GroupBox>
+                </StackPanel>
+                <TextBlock Text="Владелец ЛС:"
                            FontSize="20"
                            Margin="5"
                            Foreground="#FF0850A4"
                            Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="ИНН:"
+                              Header="Владелец:"
                               FontSize="20"
                               Margin="5">
-                        <TextBox Name="TxbTIN"
-                                 Style="{StaticResource MaterialDesignTextBox}"
-                                 Width="250"
-                                 CaretBrush="#FF0850A4"
-                                 SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Дата регистрации ИНН:"
-                              FontSize="20"
-                              Margin="5">
-                        <DatePicker Name="DPTINRegistrationDate"
-                                    Width="250"
-                                    BorderBrush="#FF0850A4"/>
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="ИНН Зарегистрирован:"
-                              FontSize="20"
-                              Margin="5">
-                        <TextBox Name="TxbWhoRegisteredTIN"
-                                 Style="{StaticResource MaterialDesignTextBox}"
-                                 Width="250"
-                                 CaretBrush="#FF0850A4"
-                                 SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                        <ComboBox Name="CmbClient"
+                                  Width="400"/>
                     </GroupBox>
                 </StackPanel>
-                <TextBlock Text="Данные СНИЛС:"
-                           FontSize="20"
-                           Margin="5"
-                           Foreground="#FF0850A4"
-                           Background="#FFD6DAED"/>
-                <StackPanel Orientation="Horizontal">
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="СНИЛС:"
-                              FontSize="20"
-                              Margin="5">
-                        <TextBox Name="TxbSNILS"
-                                 Style="{StaticResource MaterialDesignTextBox}"
-                                 Width="250"
-                                 CaretBrush="#FF0850A4"
-                                 SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Дата регистрации СНИЛС:"
-                              FontSize="20"
-                              Margin="5">
-                        <DatePicker Name="DPSNILSRegistationDate"
-                                    Width="250"
-                                    BorderBrush="#FF0850A4"/>
-                    </GroupBox>
-                </StackPanel>
-                <Button Name="BtnAdd"
-                        Click="BtnAdd_Click"
-                        Content="Добавить"
+                <Button Name="BtnEdit"
+                        Click="BtnEdit_Click"
+                        Content="Внести изменения"
                         Foreground="#0850A4"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Center"

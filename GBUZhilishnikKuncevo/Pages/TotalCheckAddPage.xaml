@@ -21,7 +21,7 @@
                     VerticalAlignment="Bottom" Cursor="Hand"/>
             <StackPanel Orientation="Horizontal">
                 <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                          Header="Лицевой счёт плательщика:"
+                          Header="ЛС плательщика:"
                           FontSize="20"
                           Margin="5">
                     <ComboBox Name="CmbBankBook"

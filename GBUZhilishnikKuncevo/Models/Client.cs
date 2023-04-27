@@ -29,6 +29,7 @@ namespace GBUZhilishnikKuncevo.Models
         public string surname { get; set; }
         public string patronymic { get; set; }
         public int genderId { get; set; }
+        public string fullName => $"{surname} {name} {patronymic}";
         public System.DateTime dateOfBirth { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

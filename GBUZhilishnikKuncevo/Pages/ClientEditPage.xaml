@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="800"
+      d:DesignHeight="670" d:DesignWidth="800"
       Title="Редактирование данных квартиросъемщика">
 
     <Grid Background="White">
@@ -20,6 +20,11 @@
                         Margin="5, 5, 5, 5"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"/>
+                <TextBlock Text="Личные данные:"
+                           FontSize="20"
+                           Margin="5"
+                           Foreground="#FF0850A4"
+                           Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Фамилия:"
@@ -87,6 +92,11 @@
                                     BorderBrush="#FF0850A4"/>
                     </GroupBox>
                 </StackPanel>
+                <TextBlock Text="Паспортные данные:"
+                           FontSize="20"
+                           Margin="5"
+                           Foreground="#FF0850A4"
+                           Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Серия паспорта:"
@@ -159,6 +169,11 @@
                                  VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
+                <TextBlock Text="Данные ИНН:"
+                           FontSize="20"
+                           Margin="5"
+                           Foreground="#FF0850A4"
+                           Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="ИНН:"
@@ -193,6 +208,11 @@
                                  VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
+                <TextBlock Text="Данные СНИЛС:"
+                           FontSize="20"
+                           Margin="5"
+                           Foreground="#FF0850A4"
+                           Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="СНИЛС:"

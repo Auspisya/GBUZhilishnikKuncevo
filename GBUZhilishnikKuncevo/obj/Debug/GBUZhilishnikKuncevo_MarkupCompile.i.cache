@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\App.xaml
-151680193517
+17-835739459
 2-1223955081
-47-1373485565
+49686790747
 21345587702
-MainWindow.xaml;Pages\AccountingAddPage.xaml;Pages\AccountingEditPage.xaml;Pages\AccountingPage.xaml;Pages\ClientAddPage.xaml;Pages\ClientEditPage.xaml;Pages\ClientInfoPage.xaml;Pages\ClientPage.xaml;Pages\CounterInfoPage.xaml;Pages\CounterPage.xaml;Pages\DebtorsPage.xaml;Pages\TotalCheckAddPage.xaml;Pages\ServiceCheckPage.xaml;Pages\TotalCheckPage.xaml;Pages\WelcomePage.xaml;
+MainWindow.xaml;Pages\AccountingAddPage.xaml;Pages\AccountingEditPage.xaml;Pages\AccountingPage.xaml;Pages\BankBookEditPage.xaml;Pages\BankBookPage.xaml;Pages\ClientAddPage.xaml;Pages\ClientEditPage.xaml;Pages\ClientInfoPage.xaml;Pages\ClientPage.xaml;Pages\CounterInfoPage.xaml;Pages\CounterPage.xaml;Pages\DebtorsPage.xaml;Pages\TotalCheckAddPage.xaml;Pages\ServiceCheckPage.xaml;Pages\TotalCheckPage.xaml;Pages\WelcomePage.xaml;
 
-False
+True
 

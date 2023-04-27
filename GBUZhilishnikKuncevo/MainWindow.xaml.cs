@@ -51,7 +51,7 @@ namespace GBUZhilishnikKuncevo
 
         private void BtnBankBookPage_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.frameNav.Navigate(new BankBookPage());
         }
 
         private void BtnAccountingPage_Click(object sender, RoutedEventArgs e)
