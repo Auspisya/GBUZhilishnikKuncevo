@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="800"
+      d:DesignHeight="950" d:DesignWidth="800"
       Title="Информация о квартиросъёмщике">
 
     <Grid Background="White">
@@ -33,6 +33,11 @@
                                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"/>
                     </StackPanel>
                 </Border>
+                <TextBlock Text="Паспортные данные:"
+                           FontSize="20"
+                           Margin="5"
+                           Foreground="#FF0850A4"
+                           Background="#FFD6DAED"/>
                 <StackPanel Margin="5, 5, 5, 5">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Пол:"
@@ -82,6 +87,11 @@
                         <TextBlock Text="Номер"
                                    Name="TxbPlaceOfBirth"/>
                     </GroupBox>
+                    <TextBlock Text="Данные ИНН:"
+                           FontSize="20"
+                           Margin="0, 5, 5, 5"
+                           Foreground="#FF0850A4"
+                           Background="#FFD6DAED"/>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="ИНН:"
                               FontSize="20">
@@ -100,6 +110,11 @@
                         <TextBlock Text="Номер"
                                    Name="TxbWhoRegisteredTIN"/>
                     </GroupBox>
+                    <TextBlock Text="Данные СНИЛС:"
+                           FontSize="20"
+                           Margin="0, 5, 5, 5"
+                           Foreground="#FF0850A4"
+                           Background="#FFD6DAED"/>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Номер СНИЛС:"
                               FontSize="20">

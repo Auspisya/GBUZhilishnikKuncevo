@@ -109,6 +109,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\BankBookInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\BankBookPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -248,6 +252,9 @@
     </Compile>
     <Compile Include="Pages\BankBookEditPage.xaml.cs">
       <DependentUpon>BankBookEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BankBookInfoPage.xaml.cs">
+      <DependentUpon>BankBookInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BankBookPage.xaml.cs">
       <DependentUpon>BankBookPage.xaml</DependentUpon>
