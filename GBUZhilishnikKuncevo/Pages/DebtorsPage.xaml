@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Задолженности">
+      Title="Должники">
 
     <Grid Background="White">
         <TextBox Name="TxbSearch"

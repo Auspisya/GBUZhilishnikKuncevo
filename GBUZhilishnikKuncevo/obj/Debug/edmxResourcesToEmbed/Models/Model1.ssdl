@@ -232,19 +232,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Apartment_Address">
+  <Association Name="FK_Apartment_Address1">
     <End Role="Address" Type="Self.Address" Multiplicity="1" />
-    <End Role="Apartment" Type="Self.Apartment" Multiplicity="0..1" />
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Address">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="Apartment">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="addressId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_BankBook_Apartment">
+  <Association Name="FK_BankBook_Apartment1">
     <End Role="Apartment" Type="Self.Apartment" Multiplicity="1" />
     <End Role="BankBook" Type="Self.BankBook" Multiplicity="*" />
     <ReferentialConstraint>
@@ -424,37 +424,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="Хранилище menshakova_publicUtilitiesModelContainer">
     <EntitySet Name="Accounting" EntityType="Self.Accounting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
@@ -488,11 +457,11 @@
       <End Role="Service" EntitySet="Service" />
       <End Role="Accounting" EntitySet="Accounting" />
     </AssociationSet>
-    <AssociationSet Name="FK_Apartment_Address" Association="Self.FK_Apartment_Address">
+    <AssociationSet Name="FK_Apartment_Address1" Association="Self.FK_Apartment_Address1">
       <End Role="Address" EntitySet="Address" />
       <End Role="Apartment" EntitySet="Apartment" />
     </AssociationSet>
-    <AssociationSet Name="FK_BankBook_Apartment" Association="Self.FK_BankBook_Apartment">
+    <AssociationSet Name="FK_BankBook_Apartment1" Association="Self.FK_BankBook_Apartment1">
       <End Role="Apartment" EntitySet="Apartment" />
       <End Role="BankBook" EntitySet="BankBook" />
     </AssociationSet>

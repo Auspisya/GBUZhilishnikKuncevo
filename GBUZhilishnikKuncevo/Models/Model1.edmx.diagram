@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f17d1594d6e54a8f9f7ef04840fc623c" Name="Diagram1" ZoomLevel="74">
+      <Diagram DiagramId="7c10ca20b0f745e5ae90e2e83cf03348" Name="Diagram1">
         <EntityTypeShape EntityType="menshakova_publicUtilitiesModel.Accounting" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="menshakova_publicUtilitiesModel.Address" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="menshakova_publicUtilitiesModel.Apartment" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
@@ -29,8 +29,8 @@
         <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_Accounting_Counter" ManuallyRouted="false" />
         <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_Accounting_Service" ManuallyRouted="false" />
         <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_Check_Accounting" ManuallyRouted="false" />
-        <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_Apartment_Address" ManuallyRouted="false" />
-        <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_BankBook_Apartment" ManuallyRouted="false" />
+        <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_Apartment_Address1" ManuallyRouted="false" />
+        <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_BankBook_Apartment1" ManuallyRouted="false" />
         <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_Counter_Apartment" ManuallyRouted="false" />
         <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_BankBook_Client" ManuallyRouted="false" />
         <AssociationConnector Association="menshakova_publicUtilitiesModel.FK_BankBook_Ownership" ManuallyRouted="false" />

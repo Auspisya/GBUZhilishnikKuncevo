@@ -49,7 +49,15 @@ namespace GBUZhilishnikKuncevo.Pages
             TxbApartmentNumber.Text = bankBook.Apartment.Address.apartmentNumber.ToString();
             TxbArea.Text = bankBook.Apartment.Address.area.ToString();
             TxbBankBookNumber.Text = bankBook.bankBookNumber.ToString();
-            TxbBuildingCorpse.Text = bankBook.Apartment.Address.buildingCorpse.ToString();
+
+            if (bankBook.Apartment.Address.buildingCorpse == null)
+            {
+                TxbBuildingCorpse.Text = "";
+            }
+            else 
+            {
+                TxbBuildingCorpse.Text = bankBook.Apartment.Address.buildingCorpse.ToString();
+            }
             TxbBuildingNumber.Text = bankBook.Apartment.Address.apartmentNumber.ToString();
             TxbCity.Text = bankBook.Apartment.Address.city.ToString();
             TxbEntranceNumber.Text = bankBook.Apartment.Address.entranceNumber.ToString();
@@ -60,12 +68,20 @@ namespace GBUZhilishnikKuncevo.Pages
             #endregion
             bankBookId = bankBook.id;
         }
-
+        /// <summary>
+        /// Переадресация на предыдущую страницу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.GoBack();
         }
-
+        /// <summary>
+        /// Вносит изменённые данные в БД
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             if (CmbClient.Text == "" || CmbOwnership.Text == "" || CmbProprietary.Text == "" ||
@@ -86,7 +102,7 @@ namespace GBUZhilishnikKuncevo.Pages
                 else
                 {
                     //Подключаемся к БД
-                    menshakova_publicUtilitiesEntities2 context = new menshakova_publicUtilitiesEntities2();
+                    menshakova_publicUtilitiesEntities context = new menshakova_publicUtilitiesEntities();
                     #region Берем значения из элементов управления и вносим их в базу данных
                     var bankBook = context.BankBook.Where(item => item.id == bankBookId).FirstOrDefault();
                     

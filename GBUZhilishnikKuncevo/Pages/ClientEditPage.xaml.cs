@@ -81,7 +81,7 @@ namespace GBUZhilishnikKuncevo.Pages
                 else
                 {
                     //Подключаемся к БД
-                    menshakova_publicUtilitiesEntities2 context = new menshakova_publicUtilitiesEntities2();
+                    menshakova_publicUtilitiesEntities context = new menshakova_publicUtilitiesEntities();
                     #region Берем значения из элементов управления и вносим их в базу данных
                     var client = context.Client.Where(item => item.id == clientId).FirstOrDefault();
                     client.surname = TxbSurname.Text;

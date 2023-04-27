@@ -79,7 +79,7 @@ namespace GBUZhilishnikKuncevo.Pages
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.frameNav.Navigate(new BankBookAddPage());
         }
 
         private void BtnEditInfo_Click(object sender, RoutedEventArgs e)

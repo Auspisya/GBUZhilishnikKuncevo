@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Добавить показание">
+      Title="Добавление показание">
 
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center">

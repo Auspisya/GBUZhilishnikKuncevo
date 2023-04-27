@@ -13,6 +13,6 @@ namespace GBUZhilishnikKuncevo.Classes
     public static class DBConnection
     {
         //public static menshakova_publicUtilitiesEntities DBConnect { get; set; }
-        public static menshakova_publicUtilitiesEntities2 DBConnect = new menshakova_publicUtilitiesEntities2();
+        public static menshakova_publicUtilitiesEntities DBConnect = new menshakova_publicUtilitiesEntities();
     }
 }

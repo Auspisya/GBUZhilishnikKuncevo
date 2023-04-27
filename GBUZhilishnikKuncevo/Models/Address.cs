@@ -14,6 +14,12 @@ namespace GBUZhilishnikKuncevo.Models
     
     public partial class Address
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Address()
+        {
+            this.Apartment = new HashSet<Apartment>();
+        }
+    
         public int id { get; set; }
         public string city { get; set; }
         public string area { get; set; }
@@ -24,6 +30,7 @@ namespace GBUZhilishnikKuncevo.Models
         public int floorNumber { get; set; }
         public int apartmentNumber { get; set; }
     
-        public virtual Apartment Apartment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Apartment> Apartment { get; set; }
     }
 }

@@ -87,7 +87,7 @@ namespace GBUZhilishnikKuncevo.Pages
                 else
                 {
                     //Подключаемся к БД
-                    menshakova_publicUtilitiesEntities2 context = new menshakova_publicUtilitiesEntities2();
+                    menshakova_publicUtilitiesEntities context = new menshakova_publicUtilitiesEntities();
                     #region Берем значения из элементов управления и вносим их в базу данных
                     var accounting = context.Accounting.Where(item => item.id == accountingId).FirstOrDefault();
                     accounting.counterReading = double.Parse(TxbCounterReading.Text);

@@ -101,6 +101,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\BankBookAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\BankBookEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -215,12 +219,6 @@
     <Compile Include="Models\SNILS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -244,6 +242,9 @@
     </Compile>
     <Compile Include="Pages\AccountingPage.xaml.cs">
       <DependentUpon>AccountingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BankBookAddPage.xaml.cs">
+      <DependentUpon>BankBookAddPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BankBookEditPage.xaml.cs">
       <DependentUpon>BankBookEditPage.xaml</DependentUpon>
