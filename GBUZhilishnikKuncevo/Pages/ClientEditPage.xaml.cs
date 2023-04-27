@@ -110,7 +110,6 @@ namespace GBUZhilishnikKuncevo.Pages
                     Navigation.frameNav.GoBack();
                 }
             }
-            
         }
 
         /// <summary>

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace GBUZhilishnikKuncevo.Pages
 {
@@ -22,6 +23,7 @@ namespace GBUZhilishnikKuncevo.Pages
     /// </summary>
     public partial class BankBookEditPage : Page
     {
+        private int bankBookId;
         public BankBookEditPage(BankBook bankBook)
         {
             InitializeComponent();
@@ -35,18 +37,83 @@ namespace GBUZhilishnikKuncevo.Pages
 
             CmbOwnership.DisplayMemberPath = "typeName";
             CmbOwnership.SelectedValuePath = "id";
+            CmbOwnership.ItemsSource = DBConnection.DBConnect.Ownership.ToList();
+            CmbOwnership.Text = bankBook.Ownership.typeName.ToString();
 
+            CmbProprietary.DisplayMemberPath = "typeName";
+            CmbProprietary.SelectedValuePath = "id";
+            CmbProprietary.ItemsSource = DBConnection.DBConnect.Proprietary.ToList();
+            CmbProprietary.Text = bankBook.Proprietary.typeName.ToString();
+            //Наполняем текстовые поля
+            TxbApartmentArea.Text = bankBook.Apartment.apartmentArea.ToString();
+            TxbApartmentNumber.Text = bankBook.Apartment.Address.apartmentNumber.ToString();
+            TxbArea.Text = bankBook.Apartment.Address.area.ToString();
+            TxbBankBookNumber.Text = bankBook.bankBookNumber.ToString();
+            TxbBuildingCorpse.Text = bankBook.Apartment.Address.buildingCorpse.ToString();
+            TxbBuildingNumber.Text = bankBook.Apartment.Address.apartmentNumber.ToString();
+            TxbCity.Text = bankBook.Apartment.Address.city.ToString();
+            TxbEntranceNumber.Text = bankBook.Apartment.Address.entranceNumber.ToString();
+            TxbFloorNumber.Text = bankBook.Apartment.Address.floorNumber.ToString();
+            TxbNumberOfResidents.Text = bankBook.Apartment.numberOfResidents.ToString();
+            TxbOrganization.Text = bankBook.organization.ToString();
+            TxbStreet.Text = bankBook.Apartment.Address.street.ToString();
             #endregion
+            bankBookId = bankBook.id;
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.frameNav.GoBack();
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
+            if (CmbClient.Text == "" || CmbOwnership.Text == "" || CmbProprietary.Text == "" ||
+                TxbApartmentArea.Text == "" || TxbApartmentNumber.Text == "" || TxbArea.Text == "" ||
+                TxbBankBookNumber.Text == "" || TxbBuildingNumber.Text == "" || TxbCity.Text == "" ||
+                TxbEntranceNumber.Text == "" || TxbFloorNumber.Text == "" || TxbNumberOfResidents.Text == "" ||
+                TxbOrganization.Text == "" || TxbStreet.Text == "")
+            {
+                MessageBox.Show("Нужно заполнить все поля!",
+                    "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Вы точно хотите внести изменения?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                {
 
+                }
+                else
+                {
+                    //Подключаемся к БД
+                    menshakova_publicUtilitiesEntities2 context = new menshakova_publicUtilitiesEntities2();
+                    #region Берем значения из элементов управления и вносим их в базу данных
+                    var bankBook = context.BankBook.Where(item => item.id == bankBookId).FirstOrDefault();
+                    
+                    bankBook.proprietaryId = (CmbProprietary.SelectedItem as Proprietary).id;
+                    bankBook.clientId = (CmbClient.SelectedItem as Client).id;
+                    bankBook.typeOfOwnershipId = (CmbOwnership.SelectedItem as Ownership).id;
+                    bankBook.Apartment.numberOfResidents = int.Parse(TxbNumberOfResidents.Text);
+                    bankBook.Apartment.apartmentArea = double.Parse(TxbApartmentArea.Text);
+                    bankBook.Apartment.Address.city = TxbCity.Text;
+                    bankBook.Apartment.Address.area = TxbArea.Text;
+                    bankBook.Apartment.Address.street = TxbStreet.Text;
+                    bankBook.Apartment.Address.buildingNumber = TxbBuildingNumber.Text;
+                    bankBook.Apartment.Address.buildingCorpse = TxbBuildingCorpse.Text;
+                    bankBook.Apartment.Address.entranceNumber = int.Parse(TxbEntranceNumber.Text);
+                    bankBook.Apartment.Address.floorNumber = int.Parse(TxbFloorNumber.Text);
+                    bankBook.Apartment.Address.apartmentNumber = int.Parse(TxbApartmentNumber.Text);
+                    bankBook.bankBookNumber = TxbBankBookNumber.Text;
+                    bankBook.organization = TxbOrganization.Text;
+                    #endregion
+                    //Сохраняем данные в БД
+                    context.SaveChanges();
+                    MessageBox.Show("Данные успешно изменены!",
+                            "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //Возвращаемся обратно
+                    Navigation.frameNav.GoBack();
+                }
+            }
         }
     }
 }
