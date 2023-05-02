@@ -102,5 +102,47 @@ namespace GBUZhilishnikKuncevo.Pages
         {
             Navigation.frameNav.Navigate(new CounterAddPage());
         }
+        /// <summary>
+        /// Удаление интересующего счётчика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Вы точно хотите удалить данные?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            {
+
+            }
+            else
+            {
+                try
+                {
+                    for (int i = 0; i < DataCounter.SelectedItems.Count; i++)
+                    {
+                        Counter counter = DataCounter.SelectedItems[i] as Counter;
+                        DBConnection.DBConnect.Counter.Remove(counter);
+                    }
+
+                    DBConnection.DBConnect.SaveChanges();
+                    MessageBox.Show("Данные успешно удалены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information
+                        );
+                    DataCounter.ItemsSource = null;
+                    DataCounter.ItemsSource = DBConnection.DBConnect.Counter.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
+                }
+            }
+        }
+        /// <summary>
+        /// Переадресация на страницу редактирования конкретного счётчика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnEditInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new CounterEditPage((sender as Button).DataContext as Counter));
+        }
     }
 }

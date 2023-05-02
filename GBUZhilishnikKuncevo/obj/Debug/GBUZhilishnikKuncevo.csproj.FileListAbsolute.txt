@@ -68,3 +68,5 @@ C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\
 C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\BankBookInfoPage.baml
 C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\CounterAddPage.g.cs
 C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\CounterAddPage.baml
+C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\CounterEditPage.g.cs
+C:\Users\mensh\source\repos\GBUZhilishnikKuncevo\GBUZhilishnikKuncevo\obj\Debug\Pages\CounterEditPage.baml

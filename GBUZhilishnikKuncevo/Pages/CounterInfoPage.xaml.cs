@@ -38,7 +38,8 @@ namespace GBUZhilishnikKuncevo.Pages
 
             var bankBookList = DBConnection.DBConnect.BankBook.ToList();
             var bankBook = bankBookList.Where(item => item.apartmentId == counter.apartmentId).ToList();
-            TxbBankBook.Text = bankBook[0].bankBookNumber;
+            if (bankBook.Count == 0) { TxbBankBook.Text = "Ещё не присвоен"; } else { TxbBankBook.Text = bankBook[0].bankBookNumber; }
+            //TxbBankBook.Text = bankBook[0].bankBookNumber;
         }
 
         /// <summary>
