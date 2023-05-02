@@ -31,33 +31,36 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbSurname"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Имя:"
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbName"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Отчество:"
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbPatronymic"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -70,7 +73,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Пол:"
@@ -103,7 +107,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Номер паспорта:"
@@ -114,7 +119,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Паспорт выдан:"
@@ -125,7 +131,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 KeyDown="Txb_KeyDown"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -146,7 +153,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Место рождения:"
@@ -157,7 +165,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 KeyDown="Txb_KeyDown"/>
                     </GroupBox>
                 </StackPanel>
                 <TextBlock Text="Данные ИНН:"
@@ -175,7 +184,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата регистрации ИНН:"
@@ -194,7 +204,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 KeyDown="Txb_KeyDown"/>
                     </GroupBox>
                 </StackPanel>
                 <TextBlock Text="Данные СНИЛС:"
@@ -212,7 +223,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата регистрации СНИЛС:"
