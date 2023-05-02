@@ -62,14 +62,18 @@
                               FontSize="20"
                               Margin="5">
                         <ComboBox Name="CmbProprietary"
-                                  Width="250"/>
+                                  Width="250"
+                                  IsTextSearchEnabled="True"
+                                  IsEditable="True"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Тип собственника:"
                               FontSize="20"
                               Margin="5">
                         <ComboBox Name="CmbOwnership"
-                                  Width="250"/>
+                                  Width="250"
+                                  IsTextSearchEnabled="True"
+                                  IsEditable="True"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Кол-во проживающих:"
@@ -216,7 +220,9 @@
                               FontSize="20"
                               Margin="5">
                         <ComboBox Name="CmbClient"
-                                  Width="400"/>
+                                  Width="400"
+                                  IsTextSearchEnabled="True"
+                                  IsEditable="True"/>
                     </GroupBox>
                 </StackPanel>
                 <Button Name="BtnEdit"

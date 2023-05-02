@@ -29,7 +29,8 @@ namespace GBUZhilishnikKuncevo.Models
         public int entranceNumber { get; set; }
         public int floorNumber { get; set; }
         public int apartmentNumber { get; set; }
-    
+        public string fullAddress => $"{city} {area} {street} {buildingNumber} {buildingCorpse} {entranceNumber} {floorNumber} {apartmentNumber}";
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Apartment> Apartment { get; set; }
     }

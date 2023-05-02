@@ -26,7 +26,8 @@
                           Margin="5">
                     <ComboBox Name="CmbService"
                               Width="250"
-                              SelectionChanged="CmbService_SelectionChanged"/>
+                              IsTextSearchEnabled="True"
+                              IsEditable="True"/>
                 </GroupBox>
                 <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                           Header="Показание:"

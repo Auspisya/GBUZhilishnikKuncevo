@@ -77,7 +77,7 @@
                                         Foreground="#0850A4"
                                         Style="{StaticResource MaterialDesignFlatButton}"/>
                                 <Button Name="BtnDelete"
-                                        
+                                        Click="BtnDelete_Click"
                                         Content="Удалить"
                                         Foreground="#0850A4"
                                         Style="{StaticResource MaterialDesignFlatButton}"/>

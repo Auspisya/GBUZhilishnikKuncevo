@@ -133,6 +133,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CounterAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CounterInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -270,6 +274,9 @@
     </Compile>
     <Compile Include="Pages\ClientPage.xaml.cs">
       <DependentUpon>ClientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CounterAddPage.xaml.cs">
+      <DependentUpon>CounterAddPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CounterInfoPage.xaml.cs">
       <DependentUpon>CounterInfoPage.xaml</DependentUpon>

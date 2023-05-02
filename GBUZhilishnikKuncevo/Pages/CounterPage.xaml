@@ -34,6 +34,14 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Right"
                 Margin="0, 0, 0, 0" Cursor="Hand"/>
+        <Button Name="BtnAdd"
+                Click="BtnAdd_Click"
+                Content="Добавить"
+                Foreground="#0850A4"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="0, 0, 90, 0"/>
         <DataGrid Name ="DataCounter"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"

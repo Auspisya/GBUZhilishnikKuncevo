@@ -21,7 +21,7 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"/>
                 <TextBlock Text="Личные данные:"
-                           FontSize="20"
+                           FontSize="20"   
                            Margin="5"
                            Foreground="#FF0850A4"
                            Background="#FFD6DAED"/>

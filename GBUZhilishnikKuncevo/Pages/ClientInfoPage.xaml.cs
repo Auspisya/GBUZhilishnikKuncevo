@@ -27,7 +27,8 @@ namespace GBUZhilishnikKuncevo.Pages
             InitializeComponent();
 
             #region Наполняем текстовые блоки информацией из БД
-            TxbFullName.Text = client.surname.ToString() + " " + client.name.ToString() + " " + client.patronymic.ToString();
+            if (client.patronymic == "") { TxbFullName.Text = client.surname.ToString() + " " + client.name.ToString(); } 
+            else { TxbFullName.Text = client.surname.ToString() + " " + client.name.ToString() + " " + client.patronymic.ToString(); }
             TxbNumPassport.Text = client.Passport.passportNumber.ToString();
             TxbDateOfBirth.Text = client.dateOfBirth.ToShortDateString();
             TxbGender.Text = client.Gender.genderName.ToString();

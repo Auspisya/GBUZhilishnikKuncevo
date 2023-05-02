@@ -76,20 +76,65 @@ namespace GBUZhilishnikKuncevo.Pages
             DataBankBook.ItemsSource = null;
             DataBankBook.ItemsSource = DBConnection.DBConnect.BankBook.ToList();
         }
-
+        /// <summary>
+        /// Переадресация на страницу добавления лицевого счёта и данных о нём
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new BankBookAddPage());
         }
-
+        /// <summary>
+        /// Переадресация на страницу редактирования данных о лицевом счёте
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEditInfo_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new BankBookEditPage((sender as Button).DataContext as BankBook));
         }
-
+        /// <summary>
+        /// Переадресация на страницу с конкретно выбранным лицевым счётом (его данными)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnShowInfo_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.Navigate(new BankBookInfoPage((sender as Button).DataContext as BankBook));
+        }
+        /// <summary>
+        /// Удаление лицевого счёта из БД
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Вы точно хотите удалить данные?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            {
+
+            }
+            else
+            {
+                try
+                {
+                    for (int i = 0; i < DataBankBook.SelectedItems.Count; i++)
+                    {
+                        BankBook bankBook = DataBankBook.SelectedItems[i] as BankBook;
+                        DBConnection.DBConnect.BankBook.Remove(bankBook);
+                    }
+
+                    DBConnection.DBConnect.SaveChanges();
+                    MessageBox.Show("Данные успешно удалены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information
+                        );
+                    DataBankBook.ItemsSource = null;
+                    DataBankBook.ItemsSource = DBConnection.DBConnect.BankBook.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
+                }
+            }
         }
     }
 }

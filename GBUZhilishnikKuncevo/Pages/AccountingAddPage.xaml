@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Добавление показание">
+      Title="Добавление показания">
 
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center">
@@ -26,7 +26,9 @@
                               Margin="5">
                         <ComboBox Name="CmbService"
                                   Width="250"
-                                  SelectionChanged="CmbService_SelectionChanged"/>
+                                  SelectionChanged="CmbService_SelectionChanged"
+                                  IsTextSearchEnabled="True"
+                                  IsEditable="True"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Показание:"

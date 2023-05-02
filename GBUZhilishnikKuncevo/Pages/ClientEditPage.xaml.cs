@@ -32,7 +32,7 @@ namespace GBUZhilishnikKuncevo.Pages
             // Заполняем текстовые блоки готовыми данными из БД
             TxbName.Text = client.name.ToString();
             TxbSurname.Text = client.surname.ToString();
-            TxbPatronymic.Text = client.patronymic.ToString();
+            if (client.patronymic == "") { TxbPatronymic.Text = ""; } else { TxbPatronymic.Text = client.patronymic.ToString(); }
             TxbDivisionCode.Text = client.Passport.divisionCode.ToString();
             TxbPassportIssuedBy.Text = client.Passport.passportIssuedBy.ToString();
             TxbPassportNumber.Text = client.Passport.passportNumber.ToString();
@@ -65,7 +65,7 @@ namespace GBUZhilishnikKuncevo.Pages
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             if (TxbDivisionCode.Text == "" || TxbName.Text == "" || TxbPassportIssuedBy.Text == "" ||
-                TxbPassportNumber.Text == "" || TxbPassportSeries.Text == "" || TxbPatronymic.Text == "" ||
+                TxbPassportNumber.Text == "" || TxbPassportSeries.Text == "" ||
                 TxbPhoneNumber.Text == "" || TxbPlaceOfBirth.Text == "" || TxbSNILS.Text == "" || TxbSurname.Text == "" ||
                 TxbTIN.Text == "" || TxbWhoRegisteredTIN.Text == "" || CmbGender.Text == "" || DPDateOfBirth.Text == "" ||
                 DPDateOfIssue.Text == "" || DPSNILSRegistationDate.Text == "" || DPTINRegistrationDate.Text == "")

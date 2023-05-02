@@ -51,7 +51,7 @@ namespace GBUZhilishnikKuncevo.Pages
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             if (TxbDivisionCode.Text == "" || TxbName.Text == "" || TxbPassportIssuedBy.Text == "" ||
-                TxbPassportNumber.Text == "" || TxbPassportSeries.Text == "" || TxbPatronymic.Text == "" ||
+                TxbPassportNumber.Text == "" || TxbPassportSeries.Text == "" ||
                 TxbPhoneNumber.Text == "" || TxbPlaceOfBirth.Text == "" || TxbSNILS.Text == "" || TxbSurname.Text == "" ||
                 TxbTIN.Text == "" || TxbWhoRegisteredTIN.Text == "" || CmbGender.Text == "" || DPDateOfBirth.Text == "" ||
                 DPDateOfIssue.Text == "" || DPSNILSRegistationDate.Text == "" || DPTINRegistrationDate.Text == "")

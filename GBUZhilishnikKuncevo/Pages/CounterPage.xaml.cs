@@ -93,5 +93,14 @@ namespace GBUZhilishnikKuncevo.Pages
         {
             TxbSearch.Text = "";
         }
+        /// <summary>
+        /// Переадресация на страницу с формой добавления счётчика в БД
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new CounterAddPage());
+        }
     }
 }
