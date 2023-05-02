@@ -86,5 +86,10 @@ namespace GBUZhilishnikKuncevo.Pages
         {
             Navigation.frameNav.Navigate(new BankBookEditPage((sender as Button).DataContext as BankBook));
         }
+
+        private void BtnShowInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.frameNav.Navigate(new BankBookInfoPage((sender as Button).DataContext as BankBook));
+        }
     }
 }

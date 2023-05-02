@@ -67,7 +67,7 @@
                         <DataTemplate>
                             <StackPanel>
                                 <Button Name="BtnShowInfo"
-                                        
+                                        Click="BtnShowInfo_Click"
                                         Content="Подробнее"
                                         Foreground="#0850A4"
                                         Style="{StaticResource MaterialDesignFlatButton}"/>

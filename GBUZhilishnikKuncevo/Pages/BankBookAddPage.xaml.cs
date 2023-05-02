@@ -49,7 +49,7 @@ namespace GBUZhilishnikKuncevo.Pages
         /// <param name="e"></param>
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.frameNav.GoBack();
         }
         /// <summary>
         /// Добавление новых экземпляров записей в базу данных
