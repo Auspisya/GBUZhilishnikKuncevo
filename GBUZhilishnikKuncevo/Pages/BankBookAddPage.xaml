@@ -31,22 +31,24 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbBankBookNumber"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
+                                 ToolTip="Сплошные 10 цифр"
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbBankBookNumber_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Организация:"
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbOrganization"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="510"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="510"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
                 <TextBlock Text="Данные о помещении:"
@@ -78,11 +80,12 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbNumberOfResidents"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -91,11 +94,12 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbApartmentArea"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                 </StackPanel>
                 <TextBlock Text="Адрес помещения:"
@@ -113,7 +117,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Район:"
@@ -124,7 +129,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Улица:"
@@ -135,7 +141,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -170,7 +177,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -183,7 +191,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Номер помещения:"

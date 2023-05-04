@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -125,6 +126,65 @@ namespace GBUZhilishnikKuncevo.Pages
                             MessageBoxButton.OK,
                             MessageBoxImage.Warning);
                     }
+                }
+            }
+        }
+        /// <summary>
+        /// Разрешение на ввод только букв и некоторых символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Txb_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            Regex pattern = new Regex("^[a-zA-Z]+$");
+
+            if (!pattern.IsMatch(e.Key.ToString()))
+            {
+                //Отмена нажатия клавиши, если символ не соответствует шаблону
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Разрешение на ввод только букв и некоторых символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Txb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string pattern = @"[\d\p{P}]";
+            if (Regex.IsMatch(e.Text, pattern))
+            {
+                e.Handled = true;
+            }
+        }
+        /// <summary>
+        /// Разрешение на ввод только цифр и некоторых символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxbNum_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string pattern = @"[^0-9+-,.]+";
+            if (Regex.IsMatch(e.Text, pattern))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxbBankBookNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (TxbBankBookNumber.Text.Length >= 10)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                string pattern = @"[^0-9+-]+";
+                if (Regex.IsMatch(e.Text, pattern))
+                {
+                    e.Handled = true;
                 }
             }
         }

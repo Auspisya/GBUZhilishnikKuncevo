@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -86,6 +87,19 @@ namespace GBUZhilishnikKuncevo.Pages
                     //Возвращаемся обратно
                     Navigation.frameNav.GoBack();
                 }
+            }
+        }
+        /// <summary>
+        /// Разрешение на ввод только цифр и некоторых символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxbNum_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string pattern = @"[^0-9+-,.]+";
+            if (Regex.IsMatch(e.Text, pattern))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -120,6 +121,145 @@ namespace GBUZhilishnikKuncevo.Pages
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             Navigation.frameNav.GoBack();
+        }
+
+        /// <summary>
+        /// Разрешение на ввод только букв и некоторых символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Txb_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            Regex pattern = new Regex("^[a-zA-Z]+$");
+
+            if (!pattern.IsMatch(e.Key.ToString()))
+            {
+                //Отмена нажатия клавиши, если символ не соответствует шаблону
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Разрешение на ввод только букв и некоторых символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Txb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string pattern = @"[\d\p{P}]";
+            if (Regex.IsMatch(e.Text, pattern))
+            {
+                e.Handled = true;
+            }
+        }
+        /// <summary>
+        /// Разрешение на ввод только цифр и некоторых символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxbNum_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string pattern = @"[^0-9+-]+";
+            if (Regex.IsMatch(e.Text, pattern))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxbPhoneNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (TxbPhoneNumber.Text.Length >= 12)
+            {
+                e.Handled = true;
+            }
+            else {
+                string pattern = @"[^0-9+-]+";
+                if (Regex.IsMatch(e.Text, pattern))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void TxbPassportSeries_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (TxbPhoneNumber.Text.Length >= 4)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                string pattern = @"[^0-9+-]+";
+                if (Regex.IsMatch(e.Text, pattern))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void TxbPassportNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (TxbPhoneNumber.Text.Length >= 6)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                string pattern = @"[^0-9+-]+";
+                if (Regex.IsMatch(e.Text, pattern))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void TxbSNILS_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (TxbPhoneNumber.Text.Length >= 14)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                string pattern = @"[^0-9+-]+";
+                if (Regex.IsMatch(e.Text, pattern))
+                {
+                    e.Handled = true;
+                }
+            }  
+        }
+
+        private void TxbTIN_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (TxbPhoneNumber.Text.Length >= 10)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                string pattern = @"[^0-9+-]+";
+                if (Regex.IsMatch(e.Text, pattern))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void TxbDivisionCode_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (TxbPhoneNumber.Text.Length >= 7)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                string pattern = @"[^0-9+-]+";
+                if (Regex.IsMatch(e.Text, pattern))
+                {
+                    e.Handled = true;
+                }
+            } 
         }
     }
 }

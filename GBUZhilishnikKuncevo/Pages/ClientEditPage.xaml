@@ -31,36 +31,39 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbSurname"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             Text="Name"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 Text="Name"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Имя:"
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbName"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             Text="Name"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 Text="Name"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Отчество:"
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbPatronymic"
-                             Style="{StaticResource MaterialDesignTextBox}"
-                             Width="250"
-                             CaretBrush="#FF0850A4"
-                             SelectionBrush="#FF0850A4"
-                             Text="Name"
-                             VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignTextBox}"
+                                 Width="250"
+                                 CaretBrush="#FF0850A4"
+                                 SelectionBrush="#FF0850A4"
+                                 Text="Name"
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="Txb_PreviewTextInput"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -69,12 +72,13 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbPhoneNumber"
+                                 ToolTip="Образец: +79000000000"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 Text="Name"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbPhoneNumber_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Пол:"
@@ -103,24 +107,28 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbPassportSeries"
+                                 ToolTip="Сплошные 4 цифры"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbPassportSeries_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Номер паспорта:"
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbPassportNumber"
+                                 ToolTip="Сплошные 6 цифр"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbPassportNumber_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Паспорт выдан:"
@@ -154,7 +162,8 @@
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbDivisionCode_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Место рождения:"
@@ -166,7 +175,8 @@
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 KeyDown="Txb_KeyDown"/>
                     </GroupBox>
                 </StackPanel>
                 <TextBlock Text="Данные ИНН:"
@@ -180,12 +190,14 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbTIN"
+                                 ToolTip="Сплошные 10 цифр"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbTIN_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата регистрации ИНН:"
@@ -219,12 +231,14 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbSNILS"
+                                 ToolTip="Образец: 000-000-000 00"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbSNILS_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата регистрации СНИЛС:"

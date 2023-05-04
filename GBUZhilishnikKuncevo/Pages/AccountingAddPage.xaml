@@ -39,7 +39,8 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"/>
+                                 VerticalAlignment="Top"
+                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                 <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Ед. измерения:"

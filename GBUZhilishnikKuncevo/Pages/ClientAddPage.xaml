@@ -69,12 +69,13 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbPhoneNumber"
+                                 ToolTip="Образец: +79000000000"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
+                                 PreviewTextInput="TxbPhoneNumber_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Пол:"
@@ -103,24 +104,26 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbPassportSeries"
+                                 ToolTip="Сплошные 4 цифры"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
+                                 PreviewTextInput="TxbPassportSeries_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Номер паспорта:"
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbPassportNumber"
+                                 ToolTip="Сплошные 6 цифр"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
+                                 PreviewTextInput="TxbPassportNumber_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Паспорт выдан:"
@@ -131,8 +134,7 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"
-                                 KeyDown="Txb_KeyDown"/>
+                                 VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -149,12 +151,13 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbDivisionCode"
+                                 ToolTip="Образец: 000-000"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
+                                 PreviewTextInput="TxbDivisionCode_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Место рождения:"
@@ -180,12 +183,13 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbTIN"
+                                 ToolTip="Сплошные 10 цифр"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
+                                 PreviewTextInput="TxbTIN_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата регистрации ИНН:"
@@ -204,8 +208,7 @@
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
-                                 VerticalAlignment="Top"
-                                 KeyDown="Txb_KeyDown"/>
+                                 VerticalAlignment="Top"/>
                     </GroupBox>
                 </StackPanel>
                 <TextBlock Text="Данные СНИЛС:"
@@ -219,12 +222,13 @@
                               FontSize="20"
                               Margin="5">
                         <TextBox Name="TxbSNILS"
+                                 ToolTip="Образец: 000-000-000 00"
                                  Style="{StaticResource MaterialDesignTextBox}"
                                  Width="250"
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbNum_PreviewTextInput"/>
+                                 PreviewTextInput="TxbSNILS_PreviewTextInput"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата регистрации СНИЛС:"
