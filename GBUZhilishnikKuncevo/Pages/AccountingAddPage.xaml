@@ -43,9 +43,9 @@
                                  PreviewTextInput="TxbNum_PreviewTextInput"/>
                     </GroupBox>
                 <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Ед. измерения:"
-                              FontSize="20"
-                              Margin="5">
+                          Header="Ед. измерения:"
+                          FontSize="20"
+                          Margin="5">
                     <TextBox Name="TxbUnit"
                              Style="{StaticResource MaterialDesignTextBox}"
                              Width="250"
@@ -65,32 +65,45 @@
                                     BorderBrush="#FF0850A4"/>
                     </GroupBox>
                 <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Дата окончания ведения учёта:"
-                              FontSize="20"
-                              Margin="5">
+                          Header="Дата окончания ведения учёта:"
+                          FontSize="20"
+                          Margin="5">
                     <DatePicker Name="DPDateOfEnd"
-                                    Width="290"
-                                    BorderBrush="#FF0850A4"/>
+                                Width="290"
+                                BorderBrush="#FF0850A4"/>
                 </GroupBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Лицевой счёт плательщика:"
-                              FontSize="20"
-                              Margin="5">
+                          Header="Лицевой счёт плательщика:"
+                          FontSize="20"
+                          Margin="5">
                     <ComboBox Name="CmbBankBook"
-                                  Width="250"
-                                  IsTextSearchEnabled="True"
-                                  IsEditable="True"/>
+                              Width="250"
+                              IsTextSearchEnabled="True"
+                              IsEditable="True"/>
                 </GroupBox>
                 <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
-                              Header="Номер счётчика:"
-                              FontSize="20"
-                              Margin="5">
+                          Header="Номер счётчика:"
+                          FontSize="20"
+                          Margin="5">
                     <ComboBox Name="CmbCounterNumber"
-                                  Width="250"
-                                  IsTextSearchEnabled="True"
-                                  IsEditable="True"/>
+                              Width="250"
+                              IsTextSearchEnabled="True"
+                              IsEditable="True"
+                              SelectionChanged="CmbCounterNumber_SelectionChanged"/>
+                </GroupBox>
+                <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                          Header="Тип счётчика:"
+                          FontSize="20"
+                          Margin="5">
+                    <TextBox Name="TxbCounterType"
+                             Style="{StaticResource MaterialDesignTextBox}"
+                             Width="250"
+                             CaretBrush="#FF0850A4"
+                             SelectionBrush="#FF0850A4"
+                             VerticalAlignment="Top"
+                             IsReadOnly="True"/>
                 </GroupBox>
             </StackPanel>
             <Button Name="BtnAdd"

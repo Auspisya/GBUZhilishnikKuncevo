@@ -27,7 +27,8 @@
                     <ComboBox Name="CmbService"
                               Width="250"
                               IsTextSearchEnabled="True"
-                              IsEditable="True"/>
+                              IsEditable="True"
+                              SelectionChanged="CmbService_SelectionChanged"/>
                 </GroupBox>
                 <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                           Header="Показание:"
@@ -89,7 +90,20 @@
                     <ComboBox Name="CmbCounterNumber"
                               Width="250"
                               IsTextSearchEnabled="True"
-                              IsEditable="True"/>
+                              IsEditable="True"
+                              SelectionChanged="CmbCounterNumber_SelectionChanged"/>
+                </GroupBox>
+                <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
+                          Header="Тип счётчика:"
+                          FontSize="20"
+                          Margin="5">
+                    <TextBox Name="TxbCounterType"
+                             Style="{StaticResource MaterialDesignTextBox}"
+                             Width="250"
+                             CaretBrush="#FF0850A4"
+                             SelectionBrush="#FF0850A4"
+                             VerticalAlignment="Top"
+                             IsReadOnly="True"/>
                 </GroupBox>
             </StackPanel>
             <Button Name="BtnEdit"

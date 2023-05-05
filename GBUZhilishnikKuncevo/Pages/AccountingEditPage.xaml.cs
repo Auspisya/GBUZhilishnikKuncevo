@@ -118,13 +118,8 @@ namespace GBUZhilishnikKuncevo.Pages
         /// <param name="e"></param>
         private void CmbService_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int service = (int)CmbService.SelectedValue;
-            string serviceId = (service - 1).ToString();
-            var itemsList = DBConnection.DBConnect.Service.ToList();
-
-            var accountingUnit = itemsList.Where(item => item.TypeOfService.id.ToString().Contains(serviceId)).ToList();
-
-            TxbUnit.Text = accountingUnit[0].unit;
+            var unit = (CmbService.SelectedItem as Service).unit.ToString();
+            TxbUnit.Text = unit;
         }
         /// <summary>
         /// Разрешение на ввод только цифр и некоторых символов
@@ -137,6 +132,27 @@ namespace GBUZhilishnikKuncevo.Pages
             if (Regex.IsMatch(e.Text, pattern))
             {
                 e.Handled = true;
+            }
+        }
+        /// <summary>
+        /// Вывод типа счётчика в зависимости от выбранного номера счётчика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CmbCounterNumber_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CmbCounterNumber.SelectedIndex == -1) { TxbCounterType.Text = ""; }
+            else
+            {
+                try
+                {
+                    var counterType = (CmbCounterNumber.SelectedItem as Counter).TypeOfCounter.counterName;
+                    TxbCounterType.Text = counterType.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
