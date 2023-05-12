@@ -172,21 +172,5 @@ namespace GBUZhilishnikKuncevo.Pages
                 e.Handled = true;
             }
         }
-
-        private void TxbBankBookNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            if (TxbBankBookNumber.Text.Length >= 10)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                string pattern = @"[^0-9+-]+";
-                if (Regex.IsMatch(e.Text, pattern))
-                {
-                    e.Handled = true;
-                }
-            }
-        }
     }
 }

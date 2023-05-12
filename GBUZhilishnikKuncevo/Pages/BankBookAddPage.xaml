@@ -29,7 +29,7 @@
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Номер лицевого счёта:"
                               FontSize="20"
-                              Margin="5">
+                              Margin="5, 5, 5, 17">
                         <TextBox Name="TxbBankBookNumber"
                                  ToolTip="Сплошные 10 цифр"
                                  Style="{StaticResource MaterialDesignTextBox}"
@@ -37,7 +37,8 @@
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbBankBookNumber_PreviewTextInput"/>
+                                 PreviewTextInput="TxbNum_PreviewTextInput"
+                                 MaxLength="10"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Организация:"

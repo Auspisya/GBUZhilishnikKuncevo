@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GBUZhilishnikKuncevo.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="670" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="800"
       Title="Редактирование данных квартиросъемщика">
 
     <Grid Background="White">
@@ -78,7 +78,8 @@
                                  CaretBrush="#FF0850A4"
                                  SelectionBrush="#FF0850A4"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbPhoneNumber_PreviewTextInput"/>
+                                 PreviewTextInput="TxbNum_PreviewTextInput"
+                                 MaxLength="12"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Пол:"
@@ -98,14 +99,14 @@
                 </StackPanel>
                 <TextBlock Text="Паспортные данные:"
                            FontSize="20"
-                           Margin="5"
+                           Margin="5, 17, 5, 5"
                            Foreground="#FF0850A4"
                            Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Серия паспорта:"
                               FontSize="20"
-                              Margin="5">
+                              Margin="5, 5, 5, 17">
                         <TextBox Name="TxbPassportSeries"
                                  ToolTip="Сплошные 4 цифры"
                                  Style="{StaticResource MaterialDesignTextBox}"
@@ -114,7 +115,8 @@
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbPassportSeries_PreviewTextInput"/>
+                                 PreviewTextInput="TxbNum_PreviewTextInput"
+                                 MaxLength="4"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Номер паспорта:"
@@ -128,7 +130,8 @@
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbPassportNumber_PreviewTextInput"/>
+                                 PreviewTextInput="TxbNum_PreviewTextInput"
+                                 MaxLength="6"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Паспорт выдан:"
@@ -163,7 +166,8 @@
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbDivisionCode_PreviewTextInput"/>
+                                 PreviewTextInput="TxbNum_PreviewTextInput"
+                                 MaxLength="7"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Место рождения:"
@@ -181,7 +185,7 @@
                 </StackPanel>
                 <TextBlock Text="Данные ИНН:"
                            FontSize="20"
-                           Margin="5"
+                           Margin="5, 17, 5, 5"
                            Foreground="#FF0850A4"
                            Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
@@ -197,7 +201,8 @@
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbTIN_PreviewTextInput"/>
+                                 PreviewTextInput="TxbNum_PreviewTextInput"
+                                 MaxLength="10"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата регистрации ИНН:"
@@ -222,7 +227,7 @@
                 </StackPanel>
                 <TextBlock Text="Данные СНИЛС:"
                            FontSize="20"
-                           Margin="5"
+                           Margin="5, 17, 5, 5"
                            Foreground="#FF0850A4"
                            Background="#FFD6DAED"/>
                 <StackPanel Orientation="Horizontal">
@@ -238,7 +243,8 @@
                                  SelectionBrush="#FF0850A4"
                                  Text="Name"
                                  VerticalAlignment="Top"
-                                 PreviewTextInput="TxbSNILS_PreviewTextInput"/>
+                                 PreviewTextInput="TxbNum_PreviewTextInput"
+                                 MaxLength="14"/>
                     </GroupBox>
                     <GroupBox Style="{StaticResource MaterialDesignHeaderedContentControl}"
                               Header="Дата регистрации СНИЛС:"

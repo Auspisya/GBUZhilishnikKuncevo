@@ -50,7 +50,7 @@ namespace GBUZhilishnikKuncevo.Pages
             CmbBankBook.DisplayMemberPath = "bankBookNumber";
             CmbBankBook.SelectedValuePath = "id";
             CmbBankBook.ItemsSource = bankBook;
-            CmbBankBook.Text = bankBook[0].bankBookNumber.ToString();
+            if (client.BankBook.Count != 0) { CmbBankBook.Text = bankBook[0].bankBookNumber.ToString(); } else { CmbBankBook.Text = ""; }  
             #endregion
         }
 
